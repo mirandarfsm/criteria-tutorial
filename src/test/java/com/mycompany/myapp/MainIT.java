@@ -56,7 +56,7 @@ public class MainIT {
         criteriaQuery.select(itemRoot);
         TypedQuery<Actor> query = em.createQuery(criteriaQuery);
 
-        List<Actor> results = sql.getResultList();
+        List<Actor> results = query.getResultList();
         assertThat(results).isNotEmpty();
         assertThat(results.size()).isEqualTo(2177);
         assertThat(results.get(0).getName()).isEqualTo("Antonio Banderas");
@@ -71,7 +71,7 @@ public class MainIT {
         // JPQL
         
         // Criteria
-        
+
     }
 
 }
