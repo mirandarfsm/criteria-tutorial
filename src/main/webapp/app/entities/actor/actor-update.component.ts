@@ -4,6 +4,8 @@ import { HttpResponse } from '@angular/common/http';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
+import * as moment from 'moment';
+import { DATE_TIME_FORMAT } from 'app/shared/constants/input.constants';
 
 import { IActor, Actor } from 'app/shared/model/actor.model';
 import { ActorService } from './actor.service';
@@ -21,6 +23,7 @@ export class ActorUpdateComponent implements OnInit {
   editForm = this.fb.group({
     id: [],
     name: [],
+    birthdate: [],
     movies: [],
   });
 
@@ -33,6 +36,11 @@ export class ActorUpdateComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.data.subscribe(({ actor }) => {
+      if (!actor.id) {
+        const today = moment().startOf('day');
+        actor.birthdate = today;
+      }
+
       this.updateForm(actor);
 
       this.movieService.query().subscribe((res: HttpResponse<IMovie[]>) => (this.movies = res.body || []));
@@ -43,6 +51,7 @@ export class ActorUpdateComponent implements OnInit {
     this.editForm.patchValue({
       id: actor.id,
       name: actor.name,
+      birthdate: actor.birthdate ? actor.birthdate.format(DATE_TIME_FORMAT) : null,
       movies: actor.movies,
     });
   }
@@ -66,6 +75,7 @@ export class ActorUpdateComponent implements OnInit {
       ...new Actor(),
       id: this.editForm.get(['id'])!.value,
       name: this.editForm.get(['name'])!.value,
+      birthdate: this.editForm.get(['birthdate'])!.value ? moment(this.editForm.get(['birthdate'])!.value, DATE_TIME_FORMAT) : undefined,
       movies: this.editForm.get(['movies'])!.value,
     };
   }

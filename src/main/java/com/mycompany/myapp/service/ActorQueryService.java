@@ -88,6 +88,9 @@ public class ActorQueryService extends QueryService<Actor> {
             if (criteria.getName() != null) {
                 specification = specification.and(buildStringSpecification(criteria.getName(), Actor_.name));
             }
+            if (criteria.getBirthdate() != null) {
+                specification = specification.and(buildRangeSpecification(criteria.getBirthdate(), Actor_.birthdate));
+            }
             if (criteria.getMovieId() != null) {
                 specification = specification.and(buildSpecification(criteria.getMovieId(),
                     root -> root.join(Actor_.movies, JoinType.LEFT).get(Movie_.id)));

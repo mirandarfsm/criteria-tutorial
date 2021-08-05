@@ -6,6 +6,7 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 import javax.persistence.*;
 
 import java.io.Serializable;
+import java.time.Instant;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -26,6 +27,9 @@ public class Actor implements Serializable {
 
     @Column(name = "name")
     private String name;
+
+    @Column(name = "birthdate")
+    private Instant birthdate;
 
     @ManyToMany
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
@@ -54,6 +58,19 @@ public class Actor implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Instant getBirthdate() {
+        return birthdate;
+    }
+
+    public Actor birthdate(Instant birthdate) {
+        this.birthdate = birthdate;
+        return this;
+    }
+
+    public void setBirthdate(Instant birthdate) {
+        this.birthdate = birthdate;
     }
 
     public Set<Movie> getMovies() {
@@ -104,6 +121,7 @@ public class Actor implements Serializable {
         return "Actor{" +
             "id=" + getId() +
             ", name='" + getName() + "'" +
+            ", birthdate='" + getBirthdate() + "'" +
             "}";
     }
 }

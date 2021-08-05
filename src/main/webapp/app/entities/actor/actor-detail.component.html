@@ -12,6 +12,10 @@
                 <dd>
                     <span>{{ actor.name }}</span>
                 </dd>
+                <dt><span jhiTranslate="criteriaApp.actor.birthdate">Birthdate</span></dt>
+                <dd>
+                    <span>{{ actor.birthdate }}</span>
+                </dd>
                 <dt><span jhiTranslate="criteriaApp.actor.movie">Movie</span></dt>
                 <dd>
                     <span *ngFor="let movie of actor.movies; let last = last">

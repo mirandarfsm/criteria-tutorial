@@ -24,6 +24,7 @@
                 <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
                     <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="name"><span jhiTranslate="criteriaApp.actor.name">Name</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="birthdate"><span jhiTranslate="criteriaApp.actor.birthdate">Birthdate</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -31,6 +32,7 @@
                 <tr *ngFor="let actor of actors ;trackBy: trackId">
                     <td><a [routerLink]="['/actor', actor.id, 'view']">{{ actor.id }}</a></td>
                     <td>{{ actor.name }}</td>
+                    <td>{{ actor.birthdate | date:'medium' }}</td>
                     <td class="text-right">
                         <div class="btn-group">
                             <button type="submit"

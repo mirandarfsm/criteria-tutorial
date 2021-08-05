@@ -23,6 +23,8 @@ import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.EntityManager;
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,6 +45,9 @@ public class ActorResourceIT {
 
     private static final String DEFAULT_NAME = "AAAAAAAAAA";
     private static final String UPDATED_NAME = "BBBBBBBBBB";
+
+    private static final Instant DEFAULT_BIRTHDATE = Instant.ofEpochMilli(0L);
+    private static final Instant UPDATED_BIRTHDATE = Instant.now().truncatedTo(ChronoUnit.MILLIS);
 
     @Autowired
     private ActorRepository actorRepository;
@@ -75,7 +80,8 @@ public class ActorResourceIT {
      */
     public static Actor createEntity(EntityManager em) {
         Actor actor = new Actor()
-            .name(DEFAULT_NAME);
+            .name(DEFAULT_NAME)
+            .birthdate(DEFAULT_BIRTHDATE);
         return actor;
     }
     /**
@@ -86,7 +92,8 @@ public class ActorResourceIT {
      */
     public static Actor createUpdatedEntity(EntityManager em) {
         Actor actor = new Actor()
-            .name(UPDATED_NAME);
+            .name(UPDATED_NAME)
+            .birthdate(UPDATED_BIRTHDATE);
         return actor;
     }
 
@@ -110,6 +117,7 @@ public class ActorResourceIT {
         assertThat(actorList).hasSize(databaseSizeBeforeCreate + 1);
         Actor testActor = actorList.get(actorList.size() - 1);
         assertThat(testActor.getName()).isEqualTo(DEFAULT_NAME);
+        assertThat(testActor.getBirthdate()).isEqualTo(DEFAULT_BIRTHDATE);
     }
 
     @Test
@@ -143,7 +151,8 @@ public class ActorResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(actor.getId().intValue())))
-            .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME)));
+            .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME)))
+            .andExpect(jsonPath("$.[*].birthdate").value(hasItem(DEFAULT_BIRTHDATE.toString())));
     }
     
     @SuppressWarnings({"unchecked"})
@@ -177,7 +186,8 @@ public class ActorResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(actor.getId().intValue()))
-            .andExpect(jsonPath("$.name").value(DEFAULT_NAME));
+            .andExpect(jsonPath("$.name").value(DEFAULT_NAME))
+            .andExpect(jsonPath("$.birthdate").value(DEFAULT_BIRTHDATE.toString()));
     }
 
 
@@ -280,6 +290,58 @@ public class ActorResourceIT {
 
     @Test
     @Transactional
+    public void getAllActorsByBirthdateIsEqualToSomething() throws Exception {
+        // Initialize the database
+        actorRepository.saveAndFlush(actor);
+
+        // Get all the actorList where birthdate equals to DEFAULT_BIRTHDATE
+        defaultActorShouldBeFound("birthdate.equals=" + DEFAULT_BIRTHDATE);
+
+        // Get all the actorList where birthdate equals to UPDATED_BIRTHDATE
+        defaultActorShouldNotBeFound("birthdate.equals=" + UPDATED_BIRTHDATE);
+    }
+
+    @Test
+    @Transactional
+    public void getAllActorsByBirthdateIsNotEqualToSomething() throws Exception {
+        // Initialize the database
+        actorRepository.saveAndFlush(actor);
+
+        // Get all the actorList where birthdate not equals to DEFAULT_BIRTHDATE
+        defaultActorShouldNotBeFound("birthdate.notEquals=" + DEFAULT_BIRTHDATE);
+
+        // Get all the actorList where birthdate not equals to UPDATED_BIRTHDATE
+        defaultActorShouldBeFound("birthdate.notEquals=" + UPDATED_BIRTHDATE);
+    }
+
+    @Test
+    @Transactional
+    public void getAllActorsByBirthdateIsInShouldWork() throws Exception {
+        // Initialize the database
+        actorRepository.saveAndFlush(actor);
+
+        // Get all the actorList where birthdate in DEFAULT_BIRTHDATE or UPDATED_BIRTHDATE
+        defaultActorShouldBeFound("birthdate.in=" + DEFAULT_BIRTHDATE + "," + UPDATED_BIRTHDATE);
+
+        // Get all the actorList where birthdate equals to UPDATED_BIRTHDATE
+        defaultActorShouldNotBeFound("birthdate.in=" + UPDATED_BIRTHDATE);
+    }
+
+    @Test
+    @Transactional
+    public void getAllActorsByBirthdateIsNullOrNotNull() throws Exception {
+        // Initialize the database
+        actorRepository.saveAndFlush(actor);
+
+        // Get all the actorList where birthdate is not null
+        defaultActorShouldBeFound("birthdate.specified=true");
+
+        // Get all the actorList where birthdate is null
+        defaultActorShouldNotBeFound("birthdate.specified=false");
+    }
+
+    @Test
+    @Transactional
     public void getAllActorsByMovieIsEqualToSomething() throws Exception {
         // Initialize the database
         actorRepository.saveAndFlush(actor);
@@ -305,7 +367,8 @@ public class ActorResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(actor.getId().intValue())))
-            .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME)));
+            .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME)))
+            .andExpect(jsonPath("$.[*].birthdate").value(hasItem(DEFAULT_BIRTHDATE.toString())));
 
         // Check, that the count call also returns 1
         restActorMockMvc.perform(get("/api/actors/count?sort=id,desc&" + filter))
@@ -352,7 +415,8 @@ public class ActorResourceIT {
         // Disconnect from session so that the updates on updatedActor are not directly saved in db
         em.detach(updatedActor);
         updatedActor
-            .name(UPDATED_NAME);
+            .name(UPDATED_NAME)
+            .birthdate(UPDATED_BIRTHDATE);
 
         restActorMockMvc.perform(put("/api/actors")
             .contentType(MediaType.APPLICATION_JSON)
@@ -364,6 +428,7 @@ public class ActorResourceIT {
         assertThat(actorList).hasSize(databaseSizeBeforeUpdate);
         Actor testActor = actorList.get(actorList.size() - 1);
         assertThat(testActor.getName()).isEqualTo(UPDATED_NAME);
+        assertThat(testActor.getBirthdate()).isEqualTo(UPDATED_BIRTHDATE);
     }
 
     @Test

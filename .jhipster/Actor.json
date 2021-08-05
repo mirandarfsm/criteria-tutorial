@@ -7,13 +7,18 @@
       "otherEntityName": "movie",
       "relationshipType": "many-to-many",
       "ownerSide": true,
-      "otherEntityRelationshipName": "actor"
+      "otherEntityRelationshipName": "actor",
+      "otherEntityField": "id"
     }
   ],
   "fields": [
     {
       "fieldName": "name",
       "fieldType": "String"
+    },
+    {
+      "fieldName": "birthdate",
+      "fieldType": "Instant"
     }
   ],
   "changelogDate": "20210805130611",

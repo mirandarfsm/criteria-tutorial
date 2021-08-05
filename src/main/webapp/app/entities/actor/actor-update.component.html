@@ -18,6 +18,13 @@
                 </div>
 
                 <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="criteriaApp.actor.birthdate" for="field_birthdate">Birthdate</label>
+                    <div class="d-flex">
+                        <input id="field_birthdate" type="datetime-local" class="form-control" name="birthdate" formControlName="birthdate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
                     <label jhiTranslate="criteriaApp.actor.movie" for="field_movies">Movie</label>
                     <select class="form-control" id="field_movies" multiple name="movies" formControlName="movies">
                         <option [ngValue]="getSelected(editForm.get('movies')!.value, movieOption)" *ngFor="let movieOption of movies; trackBy: trackById">{{ movieOption.id }}</option>

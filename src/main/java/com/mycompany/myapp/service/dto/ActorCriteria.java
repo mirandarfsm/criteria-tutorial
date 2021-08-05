@@ -10,6 +10,7 @@ import io.github.jhipster.service.filter.FloatFilter;
 import io.github.jhipster.service.filter.IntegerFilter;
 import io.github.jhipster.service.filter.LongFilter;
 import io.github.jhipster.service.filter.StringFilter;
+import io.github.jhipster.service.filter.InstantFilter;
 
 /**
  * Criteria class for the {@link com.mycompany.myapp.domain.Actor} entity. This class is used
@@ -28,6 +29,8 @@ public class ActorCriteria implements Serializable, Criteria {
 
     private StringFilter name;
 
+    private InstantFilter birthdate;
+
     private LongFilter movieId;
 
     public ActorCriteria() {
@@ -36,6 +39,7 @@ public class ActorCriteria implements Serializable, Criteria {
     public ActorCriteria(ActorCriteria other) {
         this.id = other.id == null ? null : other.id.copy();
         this.name = other.name == null ? null : other.name.copy();
+        this.birthdate = other.birthdate == null ? null : other.birthdate.copy();
         this.movieId = other.movieId == null ? null : other.movieId.copy();
     }
 
@@ -60,6 +64,14 @@ public class ActorCriteria implements Serializable, Criteria {
         this.name = name;
     }
 
+    public InstantFilter getBirthdate() {
+        return birthdate;
+    }
+
+    public void setBirthdate(InstantFilter birthdate) {
+        this.birthdate = birthdate;
+    }
+
     public LongFilter getMovieId() {
         return movieId;
     }
@@ -81,6 +93,7 @@ public class ActorCriteria implements Serializable, Criteria {
         return
             Objects.equals(id, that.id) &&
             Objects.equals(name, that.name) &&
+            Objects.equals(birthdate, that.birthdate) &&
             Objects.equals(movieId, that.movieId);
     }
 
@@ -89,6 +102,7 @@ public class ActorCriteria implements Serializable, Criteria {
         return Objects.hash(
         id,
         name,
+        birthdate,
         movieId
         );
     }
@@ -99,6 +113,7 @@ public class ActorCriteria implements Serializable, Criteria {
         return "ActorCriteria{" +
                 (id != null ? "id=" + id + ", " : "") +
                 (name != null ? "name=" + name + ", " : "") +
+                (birthdate != null ? "birthdate=" + birthdate + ", " : "") +
                 (movieId != null ? "movieId=" + movieId + ", " : "") +
             "}";
     }
