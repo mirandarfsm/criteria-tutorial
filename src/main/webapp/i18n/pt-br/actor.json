@@ -1,0 +1,23 @@
+{
+  "criteriaApp": {
+    "actor": {
+      "home": {
+        "title": "Actors",
+        "createLabel": "Criar novo Actor",
+        "createOrEditLabel": "Criar ou editar Actor",
+        "notFound": "Nenhum Actor encontrado"
+      },
+      "created": "Um novo Actor foi criado com o identificador {{ param }}",
+      "updated": "Um Actor foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Actor foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Actor {{ id }}?"
+      },
+      "detail": {
+        "title": "Actor"
+      },
+      "name": "Name",
+      "movie": "Movie"
+    }
+  }
+}

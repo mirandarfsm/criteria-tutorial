@@ -1,0 +1,22 @@
+{
+  "criteriaApp": {
+    "Subject": {
+      "null": "",
+      "COMEDY": "COMEDY",
+      "HORROR": "HORROR",
+      "ACTION": "ACTION",
+      "DRAMA": "DRAMA",
+      "MYSTERY": "MYSTERY",
+      "SCIENCE_FICTION": "SCIENCE_FICTION",
+      "MUSIC": "MUSIC",
+      "WAR": "WAR",
+      "WESTERNS": "WESTERNS",
+      "WESTERN": "WESTERN",
+      "SHORT": "SHORT",
+      "ADVENTURE": "ADVENTURE",
+      "CRIME": "CRIME",
+      "ROMANCE": "ROMANCE",
+      "FANTASY": "FANTASY"
+    }
+  }
+}

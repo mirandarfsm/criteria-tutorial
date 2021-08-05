@@ -1,0 +1,26 @@
+{
+  "criteriaApp": {
+    "movie": {
+      "home": {
+        "title": "Movies",
+        "createLabel": "Criar novo Movie",
+        "createOrEditLabel": "Criar ou editar Movie",
+        "notFound": "Nenhum Movie encontrado"
+      },
+      "created": "Um novo Movie foi criado com o identificador {{ param }}",
+      "updated": "Um Movie foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Movie foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Movie {{ id }}?"
+      },
+      "detail": {
+        "title": "Movie"
+      },
+      "title": "Title",
+      "year": "Year",
+      "subject": "Subject",
+      "popularity": "Popularity",
+      "awards": "Awards"
+    }
+  }
+}

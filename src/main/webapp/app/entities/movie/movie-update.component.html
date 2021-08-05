@@ -1,0 +1,71 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-movie-heading" jhiTranslate="criteriaApp.movie.home.createOrEditLabel">Create or edit a Movie</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="criteriaApp.movie.title" for="field_title">Title</label>
+                    <input type="text" class="form-control" name="title" id="field_title"
+                           formControlName="title"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="criteriaApp.movie.year" for="field_year">Year</label>
+                    <input type="number" class="form-control" name="year" id="field_year"
+                           formControlName="year"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="criteriaApp.movie.subject" for="field_subject">Subject</label>
+                    <select class="form-control" name="subject" formControlName="subject" id="field_subject">
+                        <option value="COMEDY">{{ 'criteriaApp.Subject.COMEDY' | translate }}</option>
+                        <option value="HORROR">{{ 'criteriaApp.Subject.HORROR' | translate }}</option>
+                        <option value="ACTION">{{ 'criteriaApp.Subject.ACTION' | translate }}</option>
+                        <option value="DRAMA">{{ 'criteriaApp.Subject.DRAMA' | translate }}</option>
+                        <option value="MYSTERY">{{ 'criteriaApp.Subject.MYSTERY' | translate }}</option>
+                        <option value="SCIENCE_FICTION">{{ 'criteriaApp.Subject.SCIENCE_FICTION' | translate }}</option>
+                        <option value="MUSIC">{{ 'criteriaApp.Subject.MUSIC' | translate }}</option>
+                        <option value="WAR">{{ 'criteriaApp.Subject.WAR' | translate }}</option>
+                        <option value="WESTERNS">{{ 'criteriaApp.Subject.WESTERNS' | translate }}</option>
+                        <option value="WESTERN">{{ 'criteriaApp.Subject.WESTERN' | translate }}</option>
+                        <option value="SHORT">{{ 'criteriaApp.Subject.SHORT' | translate }}</option>
+                        <option value="ADVENTURE">{{ 'criteriaApp.Subject.ADVENTURE' | translate }}</option>
+                        <option value="CRIME">{{ 'criteriaApp.Subject.CRIME' | translate }}</option>
+                        <option value="ROMANCE">{{ 'criteriaApp.Subject.ROMANCE' | translate }}</option>
+                        <option value="FANTASY">{{ 'criteriaApp.Subject.FANTASY' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="criteriaApp.movie.popularity" for="field_popularity">Popularity</label>
+                    <input type="number" class="form-control" name="popularity" id="field_popularity"
+                           formControlName="popularity"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="criteriaApp.movie.awards" for="field_awards">Awards</label>
+                    <input type="checkbox" class="form-control" name="awards" id="field_awards"
+                           formControlName="awards"/>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
