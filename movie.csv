@@ -185,7 +185,7 @@ id;year;title;subject;popularity;awards
 183;1974;Day of the Locust, The;DRAMA;81;False
 184;1964;Goldfinger;ACTION;77;False
 185;1977;Exorcist II, The Heretic;HORROR;29;False
-186;1953;White Lightning;;;False
+186;1953;White Lightning;NULL;NULL;False
 187;1942;Lady for a Night;DRAMA;12;False
 188;1968;Charly;DRAMA;38;True
 189;1973;High Plains Drifter;WESTERN;57;False
@@ -563,7 +563,7 @@ id;year;title;subject;popularity;awards
 561;1991;Paris Trout;DRAMA;53;False
 562;1988;Souvenir;DRAMA;42;False
 563;1966;A Man for All Seasons;DRAMA;20;True
-564;1986;Knights & Emeralds;DRAMA;;False
+564;1986;Knights & Emeralds;DRAMA;NULL;False
 565;1989;Masque of the Red Death;HORROR;9;False
 566;1943;Adventures of Smilin' Jack, The;MYSTERY;77;False
 567;1992;Adventures in Dinosaur City;ACTION;19;False
@@ -646,7 +646,7 @@ id;year;title;subject;popularity;awards
 644;1956;Bad Seed, The;HORROR;69;False
 645;1989;Lethal Weapon 2;ACTION;69;False
 646;1992;Blame It on the Bellboy;COMEDY;69;False
-647;1927;Drop Kick, The;DRAMA;;False
+647;1927;Drop Kick, The;DRAMA;NULL;False
 648;1978;Superman, The Movie;ACTION;87;False
 649;1987;Superman IV: The Quest for Peace;ACTION;77;False
 650;1970;Quackser Fortune Has a Cousin in the Bronx;COMEDY;49;False
@@ -868,7 +868,7 @@ id;year;title;subject;popularity;awards
 866;1970;Man Who Haunted Himself, The;DRAMA;75;False
 867;1991;Prisoner of Honor.;DRAMA;58;False
 868;1988;Control;DRAMA;27;False
-869;1923;Desert Rider;WESTERN;;False
+869;1923;Desert Rider;WESTERN;NULL;False
 870;1980;Wholly Moses!;COMEDY;25;False
 871;1991;Star Trek VI: The Undiscovered Country;SCIENCE FICTION;11;False
 872;1989;Star Trek V: The Final Frontier;ACTION;87;False
@@ -918,7 +918,7 @@ id;year;title;subject;popularity;awards
 916;1978;Silent Movie;COMEDY;27;False
 917;1989;Pink Cadillac;COMEDY;12;False
 918;1979;Jerk, The;COMEDY;22;False
-919;1980;Wild Times;;75;False
+919;1980;Wild Times;NULL;75;False
 920;1986;Sweet Liberty;COMEDY;12;False
 921;1982;Grease II;MUSIC;64;False
 922;1989;Married to the Mob;COMEDY;8;False
@@ -1284,7 +1284,7 @@ id;year;title;subject;popularity;awards
 1282;1954;Apache;WESTERN;78;False
 1283;1977;Twilight's Last Gleaming;DRAMA;84;False
 1284;1979;Frisco Kid, The;COMEDY;10;False
-1285;1954;Bank on the Stars;DRAMA;;False
+1285;1954;Bank on the Stars;DRAMA;NULL;False
 1286;1987;Law of Desire;DRAMA;73;False
 1287;1966;Quiller Memorandum, The;MYSTERY;34;False
 1288;1962;Longest Day, The;WAR;7;False
@@ -1396,7 +1396,7 @@ id;year;title;subject;popularity;awards
 1394;1980;Kagemusha;DRAMA;74;True
 1395;1952;Ikiru;DRAMA;36;False
 1396;1987;Empire of Spiritual Ninja;ACTION;26;False
-1397;1986;Ninja, the Violent Sorcerer;ACTION;;False
+1397;1986;Ninja, the Violent Sorcerer;ACTION;NULL;False
 1398;1926;Metropolis;SCIENCE FICTION;49;False
 1399;1946;Cloak & Dagger;MYSTERY;55;False
 1400;1920;Spiders;DRAMA;29;False

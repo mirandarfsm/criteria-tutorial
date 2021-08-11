@@ -9,19 +9,19 @@ id;year;title;subject;popularity;awards
 7;1989;American Angels: Baptism of Blood, The;DRAMA;28;false
 8;1985;Subway;DRAMA;6;false
 9;1990;Camille Claudel;DRAMA;32;false
-10;1982;Fanny and Alexander;DRAMA;81;True
+10;1982;Fanny and Alexander;DRAMA;81;true
 11;1982;Tragedy of a Ridiculous Man;DRAMA;17;false
-12;1966;A Man & a Woman;DRAMA;46;True
+12;1966;A Man & a Woman;DRAMA;46;true
 13;1986;A Man & a Woman: Twenty Years Later;DRAMA;49;false
-14;1966;Un Hombre y una Mujer;DRAMA;6;True
-15;1985;Official Story, The;DRAMA;39;True
+14;1966;Un Hombre y una Mujer;DRAMA;6;true
+15;1985;Official Story, The;DRAMA;39;true
 16;1976;Lindbergh Kidnapping Case, The;DRAMA;51;false
 17;1929;Blackmail;MYSTERY;2;false
 18;1963;Donovan's Reef;COMEDY;62;false
 19;1988;Tucker: The Man & His Dream;DRAMA;68;false
 20;1988;Scrooged;COMEDY;15;false
 21;1981;Raiders of the Lost Ark;ACTION;8;false
-22;1987;Running Man, The;SCIENCE FICTION;31;false
+22;1987;Running Man, The;SCIENCE_FICTION;31;false
 23;1991;Predator 2;ACTION;79;false
 24;1988;Colors;DRAMA;23;false
 25;1990;Zandalee;DRAMA;80;false
@@ -30,13 +30,13 @@ id;year;title;subject;popularity;awards
 28;1989;Final Notice;MYSTERY;88;false
 29;1979;Quintet;DRAMA;19;false
 30;1960;Devil's Eye, The;DRAMA;20;false
-31;1957;Wild Strawberries;DRAMA;42;True
+31;1957;Wild Strawberries;DRAMA;42;true
 32;1956;Seventh Seal, The;DRAMA;62;false
 33;1992;Germicide;DRAMA;36;false
 34;1955;Dreams;DRAMA;14;false
 35;1955;Naked Night, The;DRAMA;38;false
-36;1962;Through a Glass Darkly;DRAMA;64;True
-37;1972;Cries & Whispers;DRAMA;18;True
+36;1962;Through a Glass Darkly;DRAMA;64;true
+37;1972;Cries & Whispers;DRAMA;18;true
 38;1958;Barbarian & the Geisha, The;ACTION;52;false
 39;1967;Casino Royale;COMEDY;11;false
 40;1962;Dr. No;ACTION;7;false
@@ -46,7 +46,7 @@ id;year;title;subject;popularity;awards
 44;1966;Hawaii;DRAMA;8;false
 45;1966;Torn Curtain;MYSTERY;35;false
 46;1986;Duet for One;DRAMA;82;false
-47;1965;Sound of Music, The;MUSIC;59;True
+47;1965;Sound of Music, The;MUSIC;59;true
 48;1985;Gonzo Presents Muppet Weird Stuff;COMEDY;88;false
 49;1984;Tartuffe;COMEDY;67;false
 50;1988;A New Life;COMEDY;53;false
@@ -69,12 +69,12 @@ id;year;title;subject;popularity;awards
 67;1971;A New Leaf;COMEDY;83;false
 68;1959;Killers of Kilimanjaro;ACTION;11;false
 69;1926;Don Juan;ACTION;55;false
-70;1987;Babette's Feast;DRAMA;79;True
+70;1987;Babette's Feast;DRAMA;79;true
 71;1989;Vincent, Francois, Paul & the Others;DRAMA;20;false
 72;1988;Thunderball;ACTION;8;false
 73;1926;Lodger (Story of the London Fog);MYSTERY;76;false
 74;1988;Appointment with Death;MYSTERY;75;false
-75;1974;Murder on the Orient Express;MYSTERY;8;True
+75;1974;Murder on the Orient Express;MYSTERY;8;true
 76;1955;Blood Alley;WAR;15;false
 77;1977;Spy Who Loved Me, The;ACTION;27;false
 78;1988;Storm;ACTION;61;false
@@ -82,8 +82,8 @@ id;year;title;subject;popularity;awards
 80;1989;Miami Cops;ACTION;40;false
 81;1996;Island of Dr. Moreau, The;HORROR;39;false
 82;1992;Eighty-Four Charing Cross Road;DRAMA;9;false
-83;1980;Elephant Man, The;DRAMA;3;True
-84;1988;Dr Alien;SCIENCE FICTION;70;false
+83;1980;Elephant Man, The;DRAMA;3;true
+84;1988;Dr Alien;SCIENCE_FICTION;70;false
 85;1982;Creepshow;HORROR;70;false
 86;1987;Sammy & Rosie Get Laid;DRAMA;6;false
 87;1971;Goalie's Anxiety at the Penalty Kick, The;DRAMA;62;false
@@ -105,7 +105,7 @@ id;year;title;subject;popularity;awards
 103;1987;Siesta;DRAMA;48;false
 104;1932;Rich & Strange;DRAMA;57;false
 105;1987;Lionheart;ACTION;9;false
-106;1982;E. T. The Extra-Terrestrial;SCIENCE FICTION;8;True
+106;1982;E. T. The Extra-Terrestrial;SCIENCE_FICTION;8;true
 107;1992;Cool World;DRAMA;44;false
 108;1988;Nadine;COMEDY;47;false
 109;1989;Batman;ACTION;14;false
@@ -117,7 +117,7 @@ id;year;title;subject;popularity;awards
 115;1989;Killjoy;MYSTERY;71;false
 116;1986;No Mercy;DRAMA;11;false
 117;1991;Marrying Man, The;COMEDY;84;false
-118;1990;Misery;HORROR;48;True
+118;1990;Misery;HORROR;48;true
 119;1946;Crisis;DRAMA;66;false
 120;1984;Samson & Delilah;DRAMA;36;false
 121;1990;Act of Piracy;MYSTERY;74;false
@@ -134,24 +134,24 @@ id;year;title;subject;popularity;awards
 132;1945;Scarlet Street;DRAMA;80;false
 133;1988;Daffy Duck's Quackbusters;ACTION;68;false
 134;1985;Rowlf's Rhapsodies with the Muppets;COMEDY;79;false
-135;1982;Gandhi;DRAMA;7;True
+135;1982;Gandhi;DRAMA;7;true
 136;1975;Wind & the Lion, The;ACTION;2;false
 137;1971;Carnal Knowledge;DRAMA;10;false
 138;1970;Getting Straight;COMEDY;83;false
 139;1972;Scarlet Letter, The;DRAMA;55;false
 140;1935;Count of Old Town, The;COMEDY;72;false
-141;1978;Autumn Sonata;DRAMA;49;True
-142;1944;Gaslight;DRAMA;25;True
+141;1978;Autumn Sonata;DRAMA;49;true
+142;1944;Gaslight;DRAMA;25;true
 143;1958;Indiscreet;DRAMA;1;false
 144;1941;Walpurgis Night;DRAMA;32;false
 145;1948;Joan of Arc;DRAMA;7;false
-146;1982;A Woman Called Golda;DRAMA;15;True
+146;1982;A Woman Called Golda;DRAMA;15;true
 147;1969;A Walk in the Spring Rain;DRAMA;2;false
 148;1949;Under Capricorn;DRAMA;74;false
 149;1946;Notorious;MYSTERY;42;false
 150;1940;June Night;DRAMA;14;false
 151;1961;Goodbye Again;DRAMA;6;false
-152;1956;Anastasia;DRAMA;24;True
+152;1956;Anastasia;DRAMA;24;true
 153;1945;Bells of St. Mary's, The;DRAMA;31;false
 154;1937;Intermezzo;DRAMA;32;false
 155;1938;A Woman's Face;DRAMA;49;false
@@ -163,7 +163,7 @@ id;year;title;subject;popularity;awards
 161;1953;Voyage in Italy;DRAMA;57;false
 162;1954;Fear;DRAMA;69;false
 163;1950;Stromboli;DRAMA;69;false
-164;1969;Cactus Flower;COMEDY;67;True
+164;1969;Cactus Flower;COMEDY;67;true
 165;1989;Hideaways;COMEDY;16;false
 166;1990;Twenty Four Hours in a Woman's Life;DRAMA;16;false
 167;1987;Programmed to Kill;ACTION;71;false
@@ -172,12 +172,12 @@ id;year;title;subject;popularity;awards
 170;1970;Think Dirty;COMEDY;31;false
 171;1982;King of Comedy;DRAMA;84;false
 172;1983;Best of the Big Laff Off, The;COMEDY;20;false
-173;1984;Amadeus;DRAMA;6;True
+173;1984;Amadeus;DRAMA;6;true
 174;1973;White Lightning;ACTION;54;false
-175;1988;Unbearable Lightness of Being, The;DRAMA;5;True
+175;1988;Unbearable Lightness of Being, The;DRAMA;5;true
 176;1972;Life & Times of Judge Roy Bean, The;WESTERN;65;false
-177;1970;Airport;DRAMA;0;True
-178;1973;Day for Night;DRAMA;10;True
+177;1970;Airport;DRAMA;0;true
+178;1973;Day for Night;DRAMA;10;true
 179;1952;Secrets of Women;COMEDY;66;false
 180;1976;Burnt Offerings;HORROR;35;false
 181;1969;Easy Rider;DRAMA;36;false
@@ -185,9 +185,9 @@ id;year;title;subject;popularity;awards
 183;1974;Day of the Locust, The;DRAMA;81;false
 184;1964;Goldfinger;ACTION;77;false
 185;1977;Exorcist II, The Heretic;HORROR;29;false
-186;1953;White Lightning;;;false
+186;1953;White Lightning;NULL;NULL;false
 187;1942;Lady for a Night;DRAMA;12;false
-188;1968;Charly;DRAMA;38;True
+188;1968;Charly;DRAMA;38;true
 189;1973;High Plains Drifter;WESTERN;57;false
 190;1982;Honkytonk Man;DRAMA;69;false
 191;1990;Nightbreed;HORROR;72;false
@@ -198,12 +198,12 @@ id;year;title;subject;popularity;awards
 196;1993;John Cleese on How to Irritate People;COMEDY;62;false
 197;1958;Matchmaker, The;COMEDY;67;false
 198;1981;For Your Eyes Only;ACTION;86;false
-199;1928;Wings;WAR;44;True
+199;1928;Wings;WAR;44;true
 200;1992;Medicine Man;ACTION;6;false
 201;1989;Good Fellas;DRAMA;15;false
-202;1985;Kiss of the Spider Woman;DRAMA;10;True
+202;1985;Kiss of the Spider Woman;DRAMA;10;true
 203;1990;Rookie, THe;ACTION;48;false
-204;1973;Sting, The;DRAMA;83;True
+204;1973;Sting, The;DRAMA;83;true
 205;1958;Torpedo Run;WAR;50;false
 206;1986;Instant Justice;DRAMA;45;false
 207;1990;Cyrano de Bergerac;DRAMA;76;false
@@ -212,11 +212,11 @@ id;year;title;subject;popularity;awards
 210;1965;Morituri;DRAMA;9;false
 211;1980;From the Life of the Marionettes;DRAMA;58;false
 212;1988;Frantic;MYSTERY;17;false
-213;1978;Coma;SCIENCE FICTION;64;false
+213;1978;Coma;SCIENCE_FICTION;64;false
 214;1988;Dead Ringers;DRAMA;29;false
 215;1988;Golden Ninja Invasion;ACTION;13;false
-216;1973;Exorcist, The;HORROR;28;True
-217;1975;Alice Doesn't Live Here Anymore;COMEDY;82;True
+216;1973;Exorcist, The;HORROR;28;true
+217;1975;Alice Doesn't Live Here Anymore;COMEDY;82;true
 218;1982;Eyes of the Amaryllis, The;DRAMA;70;false
 219;1952;What Price Glory?;WAR;4;false
 220;1954;Inauguration of the Pleasure Dome;SHORT;62;false
@@ -227,13 +227,13 @@ id;year;title;subject;popularity;awards
 225;1989;Skull;DRAMA;19;false
 226;1987;Quick & The Dead, The;WESTERN;40;false
 227;1984;Best Defense;COMEDY;75;false
-228;1984;Dreamscape;SCIENCE FICTION;63;false
+228;1984;Dreamscape;SCIENCE_FICTION;63;false
 229;1989;Black Rain;ACTION;73;false
-230;1963;8 1/2;DRAMA;80;True
+230;1963;8 1/2;DRAMA;80;true
 231;1935;One Frightened Night;HORROR;33;false
 232;1988;Year My Voice Broke, The;DRAMA;71;false
 233;1966;Is Paris Burning?;WAR;63;false
-234;1974;QB VII;DRAMA;28;True
+234;1974;QB VII;DRAMA;28;true
 235;1977;Island of Dr. Moreau, The;HORROR;54;false
 236;1983;Beyond the Limit;DRAMA;51;false
 237;1936;Secret Agent;MYSTERY;50;false
@@ -250,15 +250,15 @@ id;year;title;subject;popularity;awards
 248;1943;Destroyer;ACTION;87;false
 249;1992;Party Girl;COMEDY;85;false
 250;1989;Twin Peaks;MYSTERY;86;false
-251;1987;Moonstruck;COMEDY;6;True
+251;1987;Moonstruck;COMEDY;6;true
 252;1987;Witches of Eastwick, The;COMEDY;8;false
 253;1979;Moonraker;ACTION;32;false
 254;1984;Beat Street;DRAMA;72;false
 255;1986;Running Out of Luck;COMEDY;16;false
 256;1989;Never on Tuesday;DRAMA;77;false
-257;1975;Shampoo;COMEDY;69;True
+257;1975;Shampoo;COMEDY;69;true
 258;1985;Power;DRAMA;43;false
-259;1965;Darling;DRAMA;44;True
+259;1965;Darling;DRAMA;44;true
 260;1963;Ugly American, The;DRAMA;63;false
 261;1931;Ambassador Bill;COMEDY;66;false
 262;1931;Big Trail, The;WESTERN;22;false
@@ -268,7 +268,7 @@ id;year;title;subject;popularity;awards
 266;1987;Shy People;DRAMA;7;false
 267;1980;It's My Turn;COMEDY;0;false
 268;1988;Dangerous Liaisons;DRAMA;77;false
-269;1990;Reversal of Fortune;DRAMA;73;True
+269;1990;Reversal of Fortune;DRAMA;73;true
 270;1991;Meeting Venus;COMEDY;74;false
 271;1946;Tomorrow Is Forever;DRAMA;65;false
 272;1987;Like Father Like Son;COMEDY;20;false
@@ -281,39 +281,39 @@ id;year;title;subject;popularity;awards
 279;1991;Hearts of Darkness, A Filmmaker's Apocalypse;DRAMA;72;false
 280;1961;Tonight for Sure;COMEDY;4;false
 281;1990;White Hunter, Black Heart;ADVENTURE;66;false
-282;1962;Sundays & Cybele;DRAMA;11;True
-283;1989;Puppet Master;SCIENCE FICTION;20;false
+282;1962;Sundays & Cybele;DRAMA;11;true
+283;1989;Puppet Master;SCIENCE_FICTION;20;false
 284;1991;Night Gallery;HORROR;31;false
 285;1989;Pet Sematary;HORROR;27;false
 286;1992;America's Music, Gospel;MUSIC;13;false
 287;1977;Slap Shot;COMEDY;82;false
 288;1987;O. C. & Stiggs;COMEDY;3;false
-289;1988;A Fish Called Wanda;COMEDY;7;True
+289;1988;A Fish Called Wanda;COMEDY;7;true
 290;1954;A Lesson in Love;COMEDY;48;false
 291;1957;Brink of Life;DRAMA;57;false
 292;1986;Betty Blue;DRAMA;71;false
 293;1979;Hair;MUSIC;67;false
 294;1989;National Lampoon's Christmas Vacation;COMEDY;81;false
-295;1974;Dersu Uzala, (The Hunter);ADVENTURE;81;True
+295;1974;Dersu Uzala, (The Hunter);ADVENTURE;81;true
 296;1990;Alice;COMEDY;22;false
 297;1980;Fifth Floor, The;MYSTERY;74;false
 298;1990;Snow Kill;DRAMA;35;false
 299;1971;People, The;DRAMA;36;false
-300;1969;True Grit;WESTERN;77;True
+300;1969;true Grit;WESTERN;77;true
 301;1942;Battle of Midway, The;WAR;75;false
 302;1948;Three Godfathers;WESTERN;72;false
 303;1965;Hush, Hush, Sweet Charlotte;MYSTERY;68;false
 304;1946;A Stolen Life;DRAMA;20;false
 305;1939;Old Maid, The;DRAMA;18;false
-306;1950;All about Eve;DRAMA;23;True
+306;1950;All about Eve;DRAMA;23;true
 307;1986;Fly, The;HORROR;33;false
 308;1990;Quick Change;COMEDY;24;false
 309;1988;Lair of the White Worm, The;HORROR;16;false
 310;1989;Rainbow, The;DRAMA;53;false
 311;1956;Man Who Knew Too Much, The;MYSTERY;15;false
-312;1992;Beauty & the Beast;SCIENCE FICTION;14;false
+312;1992;Beauty & the Beast;SCIENCE_FICTION;14;false
 313;1940;Foreign Correspondent;MYSTERY;61;false
-314;1949;Heiress, The;DRAMA;81;True
+314;1949;Heiress, The;DRAMA;81;true
 315;1986;Boy Who Could Fly, The;DRAMA;25;false
 316;1975;Terrorists, The;ACTION;4;false
 317;1942;Wheel of Fortune;DRAMA;36;false
@@ -330,16 +330,16 @@ id;year;title;subject;popularity;awards
 328;1981;Choice of Arms;ACTION;87;false
 329;1977;March or Die;WAR;59;false
 330;1980;Last Metro, The;DRAMA;66;false
-331;1986;Jean de Florette;DRAMA;87;True
+331;1986;Jean de Florette;DRAMA;87;true
 332;1989;Fat Man & Little Boy;DRAMA;86;false
 333;1990;Wild at Heart;DRAMA;6;false
 334;1989;Family Business;ACTION;5;false
 335;1988;Stand & Deliver;DRAMA;19;false
-336;1981;Looker;SCIENCE FICTION;62;false
+336;1981;Looker;SCIENCE_FICTION;62;false
 337;1989;Fire & Rain;ACTION;10;false
 338;1990;Best of Candid Camera, The;COMEDY;12;false
 339;1940;Seven Sinners;DRAMA;24;false
-340;1961;Judgment at Nuremberg;DRAMA;39;True
+340;1961;Judgment at Nuremberg;DRAMA;39;true
 341;1989;Minsky's Follies;COMEDY;12;false
 342;1990;Novice, The;COMEDY;72;false
 343;1987;Wings of Desire;DRAMA;71;false
@@ -356,8 +356,8 @@ id;year;title;subject;popularity;awards
 354;1985;Fantasy Man;COMEDY;82;false
 355;1986;Monster in the Closet;COMEDY;39;false
 356;1992;Double Edge;DRAMA;69;false
-357;1976;Network;COMEDY;48;True
-358;1974;Chinatown;DRAMA;55;True
+357;1976;Network;COMEDY;48;true
+358;1974;Chinatown;DRAMA;55;true
 359;1975;Three Days of the Condor;DRAMA;87;false
 360;1977;Voyage of the Damned;DRAMA;34;false
 361;1987;Barfly;DRAMA;23;false
@@ -383,29 +383,29 @@ id;year;title;subject;popularity;awards
 381;1987;Kandyland;DRAMA;41;false
 382;1987;Campus Man;DRAMA;38;false
 383;1956;Jubal;DRAMA;32;false
-384;1985;Purple Rose of Cairo, The;COMEDY;20;True
+384;1985;Purple Rose of Cairo, The;COMEDY;20;true
 385;1984;Broadway Danny Rose;COMEDY;14;false
 386;1992;Husbands & Wives;COMEDY;80;false
-387;1986;Hannah & Her Sisters;COMEDY;8;True
+387;1986;Hannah & Her Sisters;COMEDY;8;true
 388;1979;Hurricane;ACTION;8;false
 389;1986;Between Two Women;DRAMA;52;false
 390;1981;Cannonball Run, The;COMEDY;80;false
 391;1936;Doughnuts & Society;COMEDY;28;false
 392;1978;Holocaust;DRAMA;1;false
-393;1990;Meridian;SCIENCE FICTION;47;false
+393;1990;Meridian;SCIENCE_FICTION;47;false
 394;1992;Diary of a Hitman;DRAMA;67;false
 395;1988;Gor;ACTION;2;false
 396;1987;Surrender;COMEDY;84;false
-397;1984;Places in the Heart;DRAMA;83;True
+397;1984;Places in the Heart;DRAMA;83;true
 398;1991;Not Without My Daughter;DRAMA;55;false
 399;1977;Heroes;DRAMA;17;false
 400;1981;Absence of Malice;DRAMA;76;false
-401;1979;Norma Rae;DRAMA;64;True
+401;1979;Norma Rae;DRAMA;64;true
 402;1989;Steel Magnolias;DRAMA;66;false
 403;1989;Burbs, The;COMEDY;42;false
-404;1980;Empire Strikes Back, The;SCIENCE FICTION;33;false
-405;1977;Star Wars;SCIENCE FICTION;44;false
-406;1983;Return of the Jedi;SCIENCE FICTION;4;false
+404;1980;Empire Strikes Back, The;SCIENCE_FICTION;33;false
+405;1977;Star Wars;SCIENCE_FICTION;44;false
+406;1983;Return of the Jedi;SCIENCE_FICTION;4;false
 407;1991;Hear My Song;DRAMA;72;false
 408;1956;Slightly Scarlet;ACTION;52;false
 409;1957;Gunfight at the OK Corral;WESTERN;84;false
@@ -414,34 +414,34 @@ id;year;title;subject;popularity;awards
 412;1972;Roma;DRAMA;75;false
 413;1979;China Syndrome, The;DRAMA;43;false
 414;1986;Morning After, The;MYSTERY;6;false
-415;1971;Klute;DRAMA;15;True
+415;1971;Klute;DRAMA;15;true
 416;1979;Electric Horseman, The;COMEDY;34;false
-417;1965;Cat Ballou;COMEDY;62;True
-418;1991;Coming Home;DRAMA;1;True
-419;1940;Rebecca;DRAMA;78;True
+417;1965;Cat Ballou;COMEDY;62;true
+418;1991;Coming Home;DRAMA;1;true
+419;1940;Rebecca;DRAMA;78;true
 420;1944;Jane Eyre;DRAMA;44;false
 421;1973;Stacey!;ACTION;31;false
 422;1992;Naked Obsession;MYSTERY;26;false
 423;1989;Stripped to Kill II, Live Girls;MYSTERY;80;false
 424;1990;Rain Killer, The;MYSTERY;10;false
 425;1983;Valley Girl;COMEDY;30;false
-426;1991;Silence of the Lambs, The;MYSTERY;8;True
+426;1991;Silence of the Lambs, The;MYSTERY;8;true
 427;1988;Stealing Home;DRAMA;76;false
 428;1972;Napoleon & Samantha;COMEDY;33;false
 429;1988;Five Corners;DRAMA;88;false
 430;1955;Blackboard Jungle, The;DRAMA;66;false
-431;1989;My Left Foot;DRAMA;32;True
+431;1989;My Left Foot;DRAMA;32;true
 432;1987;Back to the Beach;COMEDY;45;false
 433;1934;Painted Veil, The;DRAMA;57;false
 434;1931;Inspiration;DRAMA;66;false
 435;1930;Anna Christie;DRAMA;0;false
 436;1926;Flesh & the Devil, The;DRAMA;72;false
 437;1928;Woman of Affairs;DRAMA;83;false
-438;1935;Anna Karenina;DRAMA;35;True
+438;1935;Anna Karenina;DRAMA;35;true
 439;1936;Camille;DRAMA;74;false
 440;1931;Mata Hari;DRAMA;67;false
 441;1929;Wild Orchids;DRAMA;70;false
-442;1932;Grand Hotel;DRAMA;81;True
+442;1932;Grand Hotel;DRAMA;81;true
 443;1931;Susan Lennox, Her Fall & Rise;DRAMA;64;false
 444;1939;Ninotchka;COMEDY;40;false
 445;1933;Queen Christina;DRAMA;82;false
@@ -451,7 +451,7 @@ id;year;title;subject;popularity;awards
 449;1932;As You Desire Me;DRAMA;85;false
 450;1930;Romance;DRAMA;62;false
 451;1962;A Child Is Waiting;DRAMA;60;false
-452;1982;Tootsie;COMEDY;8;True
+452;1982;Tootsie;COMEDY;8;true
 453;1989;Let It Ride;COMEDY;88;false
 454;1953;Julius Caesar;DRAMA;50;false
 455;1979;Nineteen Forty-One;COMEDY;24;false
@@ -463,15 +463,15 @@ id;year;title;subject;popularity;awards
 461;1986;Salvador;DRAMA;77;false
 462;1959;Horse Soldiers, The;WESTERN;76;false
 463;1954;Long John Silver;ACTION;56;false
-464;1961;Hustler, The;DRAMA;43;True
+464;1961;Hustler, The;DRAMA;43;true
 465;1983;Star Chamber, The;DRAMA;3;false
 466;1988;Clara's Heart;DRAMA;60;false
 467;1987;Burglar;COMEDY;44;false
 468;1986;Comic Relief;COMEDY;69;false
 469;1978;Bloodbrothers;DRAMA;11;false
-470;1988;Rain Man;DRAMA;8;True
+470;1988;Rain Man;DRAMA;8;true
 471;1966;Masculine Feminine;DRAMA;20;false
-472;1964;Outer Limits, The;SCIENCE FICTION;27;false
+472;1964;Outer Limits, The;SCIENCE_FICTION;27;false
 473;1988;Mama's Dirty Girls;HORROR;62;false
 474;1979;Last Ride of the Dalton Gang, The;WESTERN;62;false
 475;1991;Why Me?;COMEDY;74;false
@@ -495,25 +495,25 @@ id;year;title;subject;popularity;awards
 493;1989;High Spirits;COMEDY;53;false
 494;1987;Roxanne;COMEDY;66;false
 495;1982;Blade Runner;ACTION;1;false
-496;1987;Wall Street;DRAMA;6;True
+496;1987;Wall Street;DRAMA;6;true
 497;1992;Pope of Greenwich Village;DRAMA;58;false
 498;1989;After School;DRAMA;59;false
 499;1938;Flaming Frontiers;WESTERN;82;false
 500;1936;Libeled Lady;COMEDY;86;false
 501;1976;Inserts;DRAMA;85;false
 502;1988;Blue Iguana, The;DRAMA;65;false
-503;1983;Tender Mercies;DRAMA;61;True
+503;1983;Tender Mercies;DRAMA;61;true
 504;1987;Nights in White Satin;DRAMA;5;false
 505;1989;Videodrome;HORROR;36;false
 506;1991;Intimate Stranger;MYSTERY;23;false
-507;1986;Highlander;SCIENCE FICTION;8;false
+507;1986;Highlander;SCIENCE_FICTION;8;false
 508;1987;Bodycount;ACTION;51;false
 509;1989;Tango & Cash;ACTION;9;false
 510;1970;There's a Girl in My Soup;COMEDY;41;false
 511;1984;Swing Shift;DRAMA;81;false
 512;1978;Foul Play;COMEDY;46;false
 513;1982;Best Friends;COMEDY;74;false
-514;1972;Butterflies Are Free;DRAMA;82;True
+514;1972;Butterflies Are Free;DRAMA;82;true
 515;1987;Overboard;COMEDY;6;false
 516;1974;Girl from Petrovka, The;DRAMA;23;false
 517;1992;Housesitter;COMEDY;14;false
@@ -537,18 +537,18 @@ id;year;title;subject;popularity;awards
 535;1984;Johnny Dangerously;COMEDY;3;false
 536;1985;Stark;MYSTERY;27;false
 537;1949;Three Strange Loves;DRAMA;87;false
-538;1964;My Fair Lady;MUSIC;10;True
+538;1964;My Fair Lady;MUSIC;10;true
 539;1960;Unforgiven, The;DRAMA;32;false
 540;1976;Robin & Marian;ACTION;6;false
 541;1961;Children's Hour, The;DRAMA;60;false
 542;1956;Rainmaker, The;DRAMA;21;false
 543;1952;Pat & Mike;COMEDY;48;false
-544;1968;Lion in Winter, THe;DRAMA;78;True
+544;1968;Lion in Winter, THe;DRAMA;78;true
 545;1991;Sea of Grass, The;WESTERN;75;false
-546;1967;Guess Who's Coming to Dinner;DRAMA;50;True
+546;1967;Guess Who's Coming to Dinner;DRAMA;50;true
 547;1957;Desk Set;COMEDY;51;false
 548;1975;Rooster Cogburn;WESTERN;76;false
-549;1981;On Golden Pond;DRAMA;23;True
+549;1981;On Golden Pond;DRAMA;23;true
 550;1991;Adam's Rib;COMEDY;62;false
 551;1991;Boom Town;DRAMA;73;false
 552;1991;Dragon Seed;DRAMA;34;false
@@ -562,8 +562,8 @@ id;year;title;subject;popularity;awards
 560;1988;Last Temptation of Christ, The;DRAMA;32;false
 561;1991;Paris Trout;DRAMA;53;false
 562;1988;Souvenir;DRAMA;42;false
-563;1966;A Man for All Seasons;DRAMA;20;True
-564;1986;Knights & Emeralds;DRAMA;;false
+563;1966;A Man for All Seasons;DRAMA;20;true
+564;1986;Knights & Emeralds;DRAMA;NULL;false
 565;1989;Masque of the Red Death;HORROR;9;false
 566;1943;Adventures of Smilin' Jack, The;MYSTERY;77;false
 567;1992;Adventures in Dinosaur City;ACTION;19;false
@@ -582,7 +582,7 @@ id;year;title;subject;popularity;awards
 580;1989;Once Around;COMEDY;68;false
 581;1980;Loulou;DRAMA;65;false
 582;1982;World According to Garp, The;DRAMA;59;false
-583;1980;Virus;SCIENCE FICTION;62;false
+583;1980;Virus;SCIENCE_FICTION;62;false
 584;1940;Northwest Passage;ACTION;51;false
 585;1987;Gardens of Stone;DRAMA;27;false
 586;1989;Enemies, a Love Story;DRAMA;5;false
@@ -594,13 +594,13 @@ id;year;title;subject;popularity;awards
 592;1988;Crossing Delancey;COMEDY;6;false
 593;1982;State of Things, The;DRAMA;73;false
 594;1987;Business As Usual;COMEDY;17;false
-595;1973;A Touch of Class;COMEDY;79;True
+595;1973;A Touch of Class;COMEDY;79;true
 596;1970;Women in Love.;DRAMA;18;false
 597;1988;Salome's Last Dance;COMEDY;76;false
 598;1986;Casino;MYSTERY;5;false
 599;1955;Smiles of a Summer Night;COMEDY;58;false
 600;1989;New Year's Day;COMEDY;88;false
-601;1981;Mephisto;DRAMA;80;True
+601;1981;Mephisto;DRAMA;80;true
 602;1927;Easy Virtue;MYSTERY;45;false
 603;1937;Swing It Sailor!;COMEDY;6;false
 604;1991;Strictly Business;COMEDY;3;false
@@ -612,7 +612,7 @@ id;year;title;subject;popularity;awards
 610;1991;Courtship of Eddie's Father, The;COMEDY;43;false
 611;1988;Night Train to Katmandu, THe;ACTION;43;false
 612;1948;Port of Call;DRAMA;29;false
-613;1973;Paper Moon;COMEDY;3;True
+613;1973;Paper Moon;COMEDY;3;true
 614;1983;Yellowbeard;COMEDY;34;false
 615;1975;Adventures of Sherlock Holmes' Smarter;COMEDY;42;false
 616;1990;Flashback;COMEDY;19;false
@@ -620,15 +620,15 @@ id;year;title;subject;popularity;awards
 618;1955;Killer's Kiss;MYSTERY;66;false
 619;1988;Deceivers, The;ACTION;14;false
 620;1983;Breathless;ACTION;51;false
-621;1989;Born on the Fourth of July;DRAMA;8;True
+621;1989;Born on the Fourth of July;DRAMA;8;true
 622;1991;Awakenings;DRAMA;8;false
-623;1977;Annie Hall;COMEDY;68;True
-624;1979;Manhattan;COMEDY;82;True
-625;1981;Reds;DRAMA;76;True
+623;1977;Annie Hall;COMEDY;68;true
+624;1979;Manhattan;COMEDY;82;true
+625;1981;Reds;DRAMA;76;true
 626;1986;Crimes of the Heart;COMEDY;84;false
 627;1977;Looking for Mr. Goodbar;DRAMA;54;false
-628;1972;Godfather, The;DRAMA;8;True
-629;1974;Godfather, Pt 2., The;DRAMA;8;True
+628;1972;Godfather, The;DRAMA;8;true
+629;1974;Godfather, Pt 2., The;DRAMA;8;true
 630;1976;I Will, I Will...For Now;COMEDY;6;false
 631;1972;Play It Again, Sam;COMEDY;81;false
 632;1975;Love & Death;COMEDY;84;false
@@ -646,7 +646,7 @@ id;year;title;subject;popularity;awards
 644;1956;Bad Seed, The;HORROR;69;false
 645;1989;Lethal Weapon 2;ACTION;69;false
 646;1992;Blame It on the Bellboy;COMEDY;69;false
-647;1927;Drop Kick, The;DRAMA;;false
+647;1927;Drop Kick, The;DRAMA;NULL;false
 648;1978;Superman, The Movie;ACTION;87;false
 649;1987;Superman IV: The Quest for Peace;ACTION;77;false
 650;1970;Quackser Fortune Has a Cousin in the Bronx;COMEDY;49;false
@@ -672,7 +672,7 @@ id;year;title;subject;popularity;awards
 670;1987;Ninja Masters of Death;ACTION;15;false
 671;1990;Mystery Train;COMEDY;23;false
 672;1978;Go Tell the Spartans;WAR;67;false
-673;1986;True Stories;COMEDY;79;false
+673;1986;true Stories;COMEDY;79;false
 674;1953;Ugetsu Monogatari;DRAMA;82;false
 675;1969;Rebel Rousers;ACTION;44;false
 676;1988;Plain Clothes;COMEDY;4;false
@@ -684,20 +684,20 @@ id;year;title;subject;popularity;awards
 682;1987;Big Town, The;DRAMA;11;false
 683;1983;Rumble Fish;DRAMA;4;false
 684;1983;Outsiders, The;DRAMA;56;false
-685;1990;Priceless Beauty;SCIENCE FICTION;7;false
+685;1990;Priceless Beauty;SCIENCE_FICTION;7;false
 686;1989;Streets of Fire;ACTION;65;false
 687;1990;Men Don't Leave;DRAMA;66;false
 688;1988;Everybody's All American;ROMANCE;62;false
 689;1992;Cape Fear;MYSTERY;7;false
 690;1992;Postman Always Rings Twice, The;MYSTERY;24;false
 691;1949;Crashing Thru;WESTERN;19;false
-692;1978;Get Out Your Handkerchiefs;COMEDY;78;True
+692;1978;Get Out Your Handkerchiefs;COMEDY;78;true
 693;1971;Boy Friend, THe;MUSIC;8;false
 694;1990;Hard To Kill;ACTION;49;false
 695;1960;Psycho;HORROR;56;false
 696;1957;Jet Pilot;ACTION;43;false
 697;1987;Under Cover;MYSTERY;36;false
-698;1951;A Streetcar Named Desire;DRAMA;75;True
+698;1951;A Streetcar Named Desire;DRAMA;75;true
 699;1986;Golden Child, The;COMEDY;86;false
 700;1971;Statue, The;DRAMA;80;false
 701;1985;Christopher Columbus;DRAMA;69;false
@@ -718,9 +718,9 @@ id;year;title;subject;popularity;awards
 716;1991;Boxing Babes;ACTION;9;false
 717;1991;Shock 'em Dead;HORROR;31;false
 718;1960;Heller in Pink Tights;DRAMA;52;false
-719;1961;Two Women;DRAMA;83;True
+719;1961;Two Women;DRAMA;83;true
 720;1954;Gold of Naples, The;DRAMA;40;false
-721;1963;Yesterday, Today & Tomorrow;COMEDY;73;True
+721;1963;Yesterday, Today & Tomorrow;COMEDY;73;true
 722;1957;Legend of the Lost;ACTION;84;false
 723;1978;Brass Target;ACTION;53;false
 724;1964;Fall of the Roman Empire, The;DRAMA;62;false
@@ -729,7 +729,7 @@ id;year;title;subject;popularity;awards
 727;1953;Two Nights with Cleo;DRAMA;54;false
 728;1959;Black Orchid, The;DRAMA;54;false
 729;1977;Angela;DRAMA;80;false
-730;1977;A Special Day;DRAMA;80;True
+730;1977;A Special Day;DRAMA;80;true
 731;1979;Blood Feud;ACTION;52;false
 732;1991;Sophia Loren, Her Own Story;DRAMA;49;false
 733;1990;Running Away;DRAMA;2;false
@@ -744,11 +744,11 @@ id;year;title;subject;popularity;awards
 742;1986;Mission, The;DRAMA;20;false
 743;1991;Curly Sue;COMEDY;2;false
 744;1962;Lolita;DRAMA;80;false
-745;1989;Sex, Lies, and Videotape;DRAMA;70;True
+745;1989;Sex, Lies, and Videotape;DRAMA;70;true
 746;1990;Green Card;COMEDY;25;false
 747;1988;Gator Bait II;ACTION;73;false
-748;1979;Being There;COMEDY;31;True
-749;1983;Terms of Endearment;DRAMA;32;True
+748;1979;Being There;COMEDY;31;true
+749;1983;Terms of Endearment;DRAMA;32;true
 750;1967;Woman Times Seven;COMEDY;36;false
 751;1968;Bliss of Mrs. Blossom, The;COMEDY;86;false
 752;1990;Postcards from the Edge;COMEDY;63;false
@@ -766,7 +766,7 @@ id;year;title;subject;popularity;awards
 764;1988;Hot to Trot;COMEDY;78;false
 765;1986;Fire with Fire;DRAMA;9;false
 766;1990;Hot Spot;DRAMA;70;false
-767;1974;Amarcord;DRAMA;50;True
+767;1974;Amarcord;DRAMA;50;true
 768;1988;Casablanca Express;ACTION;33;false
 769;1980;Out of the Blue;DRAMA;4;false
 770;1949;Sands of Iwo Jima;WAR;72;false
@@ -775,13 +775,13 @@ id;year;title;subject;popularity;awards
 773;1955;Il Bidone;DRAMA;70;false
 774;1986;El Guerrero Solitario;DRAMA;77;false
 775;1986;Heartbreak Ridge;WAR;61;false
-776;1977;Goodbye Girl, The;COMEDY;6;True
+776;1977;Goodbye Girl, The;COMEDY;6;true
 777;1991;Audrey Rose;DRAMA;62;false
 778;1981;Polyester;COMEDY;68;false
 779;1991;Robin Hood: Prince of Thieves;ACTION;8;false
 780;1992;White Sands;DRAMA;38;false
-781;1986;Color of Money, The;DRAMA;6;True
-782;1986;Children of a Lesser God;DRAMA;20;True
+781;1986;Color of Money, The;DRAMA;6;true
+782;1986;Children of a Lesser God;DRAMA;20;true
 783;1986;Matador;COMEDY;34;false
 784;1989;Women on the Verge of a Nervous Breakdown;COMEDY;65;false
 785;1980;Pepi Luci Bom;COMEDY;66;false
@@ -791,13 +791,13 @@ id;year;title;subject;popularity;awards
 789;1990;Modern Love;COMEDY;18;false
 790;1992;Riff Raff;COMEDY;71;false
 791;1967;Glory Stompers, The;ACTION;27;false
-792;1990;Dances with Wolves;WESTERN;8;True
+792;1990;Dances with Wolves;WESTERN;8;true
 793;1987;Matewan;DRAMA;81;false
-794;1988;Mississippi Burning;DRAMA;41;True
+794;1988;Mississippi Burning;DRAMA;41;true
 795;1975;Eiger Sanction, The;ACTION;69;false
 796;1988;Unsettled Land;DRAMA;75;false
 797;1991;Cat Chaser;DRAMA;6;false
-798;1988;Accused, The;DRAMA;71;True
+798;1988;Accused, The;DRAMA;71;true
 799;1989;Winter People;DRAMA;30;false
 800;1983;Reuben, Reuben;COMEDY;2;false
 801;1987;Made in Heaven;FANTASY;57;false
@@ -811,22 +811,22 @@ id;year;title;subject;popularity;awards
 809;1989;Hawks;DRAMA;11;false
 810;1981;So Fine;COMEDY;17;false
 811;1957;Paths of Glory;DRAMA;47;false
-812;1964;Tom Jones;DRAMA;39;True
-813;1975;Sunshine Boys, The;COMEDY;35;True
+812;1964;Tom Jones;DRAMA;39;true
+813;1975;Sunshine Boys, The;COMEDY;35;true
 814;1988;Caddyshack 2;COMEDY;34;false
 815;1990;Internal Affairs;DRAMA;3;false
 816;1991;JFK;DRAMA;78;false
 817;1991;New Jack City;ACTION;80;false
 818;1991;Scenes from a Mall;COMEDY;8;false
 819;1987;Hope & Glory;WAR;3;false
-820;1970;Ryan's Daughter;DRAMA;81;True
+820;1970;Ryan's Daughter;DRAMA;81;true
 821;1973;Man Who Loved Cat Dancing, The;WESTERN;40;false
 822;1962;Man Who Shot Liberty Valance, The;WESTERN;85;false
 823;1989;Dead-Bang;ACTION;9;false
 824;1988;Big Top Pee-wee;COMEDY;17;false
-825;1960;Time Machine, The;SCIENCE FICTION;88;false
-826;1972;Cabaret;DRAMA;59;True
-827;1981;Arthur;COMEDY;79;True
+825;1960;Time Machine, The;SCIENCE_FICTION;88;false
+826;1972;Cabaret;DRAMA;59;true
+827;1981;Arthur;COMEDY;79;true
 828;1976;A Matter of Time;DRAMA;70;false
 829;1977;New York, New York;DRAMA;8;false
 830;1989;Nightmare on Elm Street, Pt. 5, The Dream Child;HORROR;41;false
@@ -841,11 +841,11 @@ id;year;title;subject;popularity;awards
 839;1986;One Crazy Summer;COMEDY;61;false
 840;1989;We're No Angels;COMEDY;51;false
 841;1984;No Small Affair;COMEDY;10;false
-842;1990;Ghost;SCIENCE FICTION;6;True
+842;1990;Ghost;SCIENCE_FICTION;6;true
 843;1986;About Last Night;DRAMA;66;false
 844;1982;Six Weeks;DRAMA;73;false
 845;1948;Return of October;COMEDY;35;false
-846;1952;Come Back, Little Sheba;DRAMA;50;True
+846;1952;Come Back, Little Sheba;DRAMA;50;true
 847;1974;Going Places;DRAMA;66;false
 848;1970;Monte Walsh;WESTERN;29;false
 849;1955;Mr. Arkadin;DRAMA;80;false
@@ -860,7 +860,7 @@ id;year;title;subject;popularity;awards
 858;1940;Long Voyage Home, The;DRAMA;88;false
 859;1955;Trouble with Harry, The;MYSTERY;28;false
 860;1987;Encounters;DRAMA;44;false
-861;1963;Hud;DRAMA;2;True
+861;1963;Hud;DRAMA;2;true
 862;1951;Operation Pacific;WAR;5;false
 863;1987;Surf Nazis Must Die;HORROR;50;false
 864;1956;Teahouse of the August Moon;DRAMA;11;false
@@ -868,9 +868,9 @@ id;year;title;subject;popularity;awards
 866;1970;Man Who Haunted Himself, The;DRAMA;75;false
 867;1991;Prisoner of Honor.;DRAMA;58;false
 868;1988;Control;DRAMA;27;false
-869;1923;Desert Rider;WESTERN;;false
+869;1923;Desert Rider;WESTERN;NULL;false
 870;1980;Wholly Moses!;COMEDY;25;false
-871;1991;Star Trek VI: The Undiscovered Country;SCIENCE FICTION;11;false
+871;1991;Star Trek VI: The Undiscovered Country;SCIENCE_FICTION;11;false
 872;1989;Star Trek V: The Final Frontier;ACTION;87;false
 873;1991;Circuitry Man;ACTION;78;false
 874;1986;Cobra;ACTION;57;false
@@ -899,9 +899,9 @@ id;year;title;subject;popularity;awards
 897;1981;Scanners;HORROR;32;false
 898;1986;Trick or Treat;HORROR;47;false
 899;1982;48 Hrs.;ACTION;67;false
-900;1985;Trip to Bountiful, The;DRAMA;62;True
-901;1955;Mister Roberts;COMEDY;8;True
-902;1969;Z;DRAMA;72;True
+900;1985;Trip to Bountiful, The;DRAMA;62;true
+901;1955;Mister Roberts;COMEDY;8;true
+902;1969;Z;DRAMA;72;true
 903;1987;Maurice;DRAMA;45;false
 904;1969;Hamlet;DRAMA;39;false
 905;1991;La Femme Nikita;DRAMA;6;false
@@ -918,7 +918,7 @@ id;year;title;subject;popularity;awards
 916;1978;Silent Movie;COMEDY;27;false
 917;1989;Pink Cadillac;COMEDY;12;false
 918;1979;Jerk, The;COMEDY;22;false
-919;1980;Wild Times;;75;false
+919;1980;Wild Times;NULL;75;false
 920;1986;Sweet Liberty;COMEDY;12;false
 921;1982;Grease II;MUSIC;64;false
 922;1989;Married to the Mob;COMEDY;8;false
@@ -959,12 +959,12 @@ id;year;title;subject;popularity;awards
 957;1987;Au Revoir les Enfants;DRAMA;35;false
 958;1989;Quo Vadis;DRAMA;6;false
 959;1949;Fighting Kentuckian, The;ACTION;74;false
-960;1974;Zardoz;SCIENCE FICTION;6;false
+960;1974;Zardoz;SCIENCE_FICTION;6;false
 961;1989;Police Academy 6: City under Siege;COMEDY;29;false
 962;1988;Police Academy 5: Assignment Miami Beach;COMEDY;59;false
 963;1986;Police Academy 3: Back in Training;COMEDY;6;false
 964;1991;America's Music, Blues;MUSIC;54;false
-965;1977;Julia;DRAMA;75;True
+965;1977;Julia;DRAMA;75;true
 966;1971;Devils, The;DRAMA;69;false
 967;1984;Ransom;DRAMA;73;false
 968;1990;Cadillac Man;COMEDY;28;false
@@ -992,16 +992,16 @@ id;year;title;subject;popularity;awards
 990;1979;Sacketts, The;WESTERN;86;false
 991;1991;To Die Standing;ACTION;53;false
 992;1980;Rodeo Girl;DRAMA;80;false
-993;1969;Butch Cassidy & the Sundance Kid;WESTERN;29;True
+993;1969;Butch Cassidy & the Sundance Kid;WESTERN;29;true
 994;1968;Hellfighters;ACTION;22;false
 995;1980;Final Countdown, The;ACTION;35;false
 996;1986;Blue Velvet;MYSTERY;6;false
 997;1989;Cousins;COMEDY;28;false
-998;1976;Black & White in Color;COMEDY;24;True
+998;1976;Black & White in Color;COMEDY;24;true
 999;1988;Another Woman;DRAMA;7;false
 1000;1992;Night on Earth;DRAMA;24;false
 1001;1988;Permanent Record;DRAMA;42;false
-1002;1992;Fisher King, The;DRAMA;8;True
+1002;1992;Fisher King, The;DRAMA;8;true
 1003;1991;Another You;COMEDY;75;false
 1004;1958;Young Lions, The;DRAMA;10;false
 1005;1988;Cheerleader Camp;HORROR;79;false
@@ -1012,29 +1012,29 @@ id;year;title;subject;popularity;awards
 1010;1991;Freejack;ACTION;26;false
 1011;1939;John Wayne Matinee Double Feature, No. 1;WESTERN;30;false
 1012;1988;Smallest Show on Earth, The;COMEDY;24;false
-1013;1987;Innerspace;SCIENCE FICTION;41;false
+1013;1987;Innerspace;SCIENCE_FICTION;41;false
 1014;1988;Presidio, The;ACTION;4;false
 1015;1990;Joe Versus the Volcano;COMEDY;17;false
 1016;1991;Doors, The;DRAMA;60;false
 1017;1990;Welcome Home, Roxy Carmichael;COMEDY;41;false
 1018;1972;Cancel My Reservation;COMEDY;60;false
 1019;1991;North by Northwest;MYSTERY;20;false
-1020;1966;Russians Are Coming, the Russians Are, The;COMEDY;79;True
+1020;1966;Russians Are Coming, the Russians Are, The;COMEDY;79;true
 1021;1992;Exodus;DRAMA;13;false
 1022;1982;Ballad of Narayama, The;DRAMA;88;false
 1023;1985;Out of the Darkness;MYSTERY;86;false
-1024;1971;Garden of the Finzi-Continis, The;DRAMA;42;True
+1024;1971;Garden of the Finzi-Continis, The;DRAMA;42;true
 1025;1974;Steppenwolf;DRAMA;20;false
 1026;1973;Mackintosh Man, The;ACTION;65;false
 1027;1968;Partner;DRAMA;26;false
 1028;1970;Conformist, The;DRAMA;72;false
 1029;1971;Dirty Harry;DRAMA;72;false
 1030;1986;Ferris Bueller's Day Off;COMEDY;12;false
-1031;1986;Legend;SCIENCE FICTION;42;false
+1031;1986;Legend;SCIENCE_FICTION;42;false
 1032;1984;Buddy System, The;DRAMA;48;false
 1033;1989;A Dry White Season;DRAMA;71;false
 1034;1975;Rocky Horror Picture Show, The;MUSIC;59;false
-1035;1968;War & Peace;DRAMA;80;True
+1035;1968;War & Peace;DRAMA;80;true
 1036;1992;Defense of the Realm;DRAMA;79;false
 1037;1991;Basil The Rat;COMEDY;9;false
 1038;1979;Fawlty Towers, Gourmet Night, Waldorf Salad & The Kipper & the Corpse;COMEDY;46;false
@@ -1048,31 +1048,31 @@ id;year;title;subject;popularity;awards
 1046;1966;Johnny Tiger;DRAMA;69;false
 1047;1986;Head Office;COMEDY;88;false
 1048;1990;Live & Let Die;ACTION;62;false
-1049;1972;Le Charme Discret de la Bourgeoisie;COMEDY;4;True
+1049;1972;Le Charme Discret de la Bourgeoisie;COMEDY;4;true
 1050;1986;Blue City;ACTION;38;false
 1051;1983;Bad Boys;DRAMA;7;false
 1052;1986;Whoopee Boys, The;COMEDY;54;false
-1053;1971;Last Picture Show, The;DRAMA;62;True
+1053;1971;Last Picture Show, The;DRAMA;62;true
 1054;1988;Diamond Trap, The;DRAMA;58;false
 1055;1981;Endless Love;DRAMA;20;false
-1056;1976;Rocky;DRAMA;78;True
+1056;1976;Rocky;DRAMA;78;true
 1057;1988;Cocktail;DRAMA;13;false
 1058;1936;Sabotage;MYSTERY;74;false
-1059;1977;Madame Rosa;DRAMA;11;True
+1059;1977;Madame Rosa;DRAMA;11;true
 1060;1985;Fozzie's Muppet Scrapbook;COMEDY;86;false
 1061;1954;Desiree;DRAMA;22;false
-1062;1960;Spartacus;DRAMA;67;True
-1063;1955;Guys & Dolls;COMEDY;70;True
+1062;1960;Spartacus;DRAMA;67;true
+1063;1955;Guys & Dolls;COMEDY;70;true
 1064;1992;Until They Sail;DRAMA;77;false
 1065;1988;Coming to America;COMEDY;11;false
-1066;1963;Lilies of the Field;DRAMA;36;True
+1066;1963;Lilies of the Field;DRAMA;36;true
 1067;1987;River's Edge;DRAMA;3;false
 1068;1986;Ruthless People;COMEDY;84;false
 1069;1987;Secret of My Success, The;COMEDY;5;false
-1070;1965;Shop on Main Street, The;DRAMA;37;True
+1070;1965;Shop on Main Street, The;DRAMA;37;true
 1071;1988;Funny Farm;COMEDY;30;false
 1072;1988;Lonely Passion of Judith Hearne, The;DRAMA;24;false
-1073;1978;California Suite;COMEDY;11;True
+1073;1978;California Suite;COMEDY;11;true
 1074;1986;Maximum Overdrive;HORROR;40;false
 1075;1985;Pale Rider;WESTERN;45;false
 1076;1990;Kissing Place, The;DRAMA;41;false
@@ -1086,10 +1086,10 @@ id;year;title;subject;popularity;awards
 1084;1990;Diamonds are Forever;ACTION;8;false
 1085;1933;Baby Face;DRAMA;66;false
 1086;1992;Violent Men, The;ACTION;25;false
-1087;1985;Cocoon;SCIENCE FICTION;45;True
+1087;1985;Cocoon;SCIENCE_FICTION;45;true
 1088;1986;Clockwise;COMEDY;10;false
 1089;1993;Romantic Comedy;COMEDY;8;false
-1090;1981;Outland;SCIENCE FICTION;7;false
+1090;1981;Outland;SCIENCE_FICTION;7;false
 1091;1967;Hang 'em High;WESTERN;67;false
 1092;1992;Basic Instinct;MYSTERY;41;false
 1093;1990;Total Recall;ACTION;8;false
@@ -1097,15 +1097,15 @@ id;year;title;subject;popularity;awards
 1095;1992;Unnamable II, The Statement of Randolph Carter, The;DRAMA;36;false
 1096;1967;Trip, The;DRAMA;64;false
 1097;1987;Ironweed;DRAMA;32;false
-1098;1979;Kramer vs. Kramer;DRAMA;8;True
+1098;1979;Kramer vs. Kramer;DRAMA;8;true
 1099;1988;Still of the Night;MYSTERY;42;false
 1100;1991;Defending Your Life;COMEDY;75;false
-1101;1978;Deer Hunter, The;DRAMA;82;True
+1101;1978;Deer Hunter, The;DRAMA;82;true
 1102;1984;Falling in Love;DRAMA;31;false
 1103;1986;Heartburn;COMEDY;57;false
 1104;1983;Silkwood;DRAMA;52;false
-1105;1982;Sophie's Choice;DRAMA;64;True
-1106;1985;Out of Africa;DRAMA;88;True
+1105;1982;Sophie's Choice;DRAMA;64;true
+1106;1985;Out of Africa;DRAMA;88;true
 1107;1981;French Lieutenant's Woman, The;DRAMA;37;false
 1108;1985;Plenty;DRAMA;9;false
 1109;1988;A Cry in the Dark;DRAMA;67;false
@@ -1115,14 +1115,14 @@ id;year;title;subject;popularity;awards
 1113;1970;On a Clear Day You Can See Forever;MUSIC;67;false
 1114;1987;Nuts;DRAMA;52;false
 1115;1983;Yentl;MUSIC;46;false
-1116;1968;Funny Girl;MUSIC;30;True
+1116;1968;Funny Girl;MUSIC;30;true
 1117;1990;Fellow Traveller;DRAMA;39;false
 1118;1970;Dodesukaden;DRAMA;75;false
 1119;1987;Sicilian, The;DRAMA;41;false
 1120;1941;So Ends Our Night;DRAMA;2;false
 1121;1984;Sword of the Valiant;ACTION;5;false
 1122;1949;Devil's Wanton, The;DRAMA;66;false
-1123;1989;Driving Miss Daisy;DRAMA;6;True
+1123;1989;Driving Miss Daisy;DRAMA;6;true
 1124;1991;Seventh Cross, The;DRAMA;35;false
 1125;1983;Between Friends;DRAMA;54;false
 1126;1957;Raintree County;DRAMA;74;false
@@ -1132,9 +1132,9 @@ id;year;title;subject;popularity;awards
 1130;1968;Secret Ceremony;DRAMA;60;false
 1131;1963;Cleopatra;DRAMA;80;false
 1132;1950;Father of the Bride;COMEDY;54;false
-1133;1992;Who's Afraid of Virginia Woolf?;DRAMA;82;True
+1133;1992;Who's Afraid of Virginia Woolf?;DRAMA;82;true
 1134;1977;A Little Night Music;MUSIC;61;false
-1135;1956;Giant;DRAMA;61;True
+1135;1956;Giant;DRAMA;61;true
 1136;1985;Rumor Mill, The;DRAMA;62;false
 1137;1943;Lassie Come Home;DRAMA;79;false
 1138;1993;Return Engagement;DRAMA;26;false
@@ -1143,7 +1143,7 @@ id;year;title;subject;popularity;awards
 1141;1991;Elizabeth Taylor Collection, The;DRAMA;21;false
 1142;1973;Ash Wednesday;DRAMA;54;false
 1143;1991;Last Time I Saw Paris, The;DRAMA;13;false
-1144;1931;Cimarron;WESTERN;44;True
+1144;1931;Cimarron;WESTERN;44;true
 1145;1992;Apache Woman;WESTERN;32;false
 1146;1984;Gary Numan - Berzerker;MUSIC;60;false
 1147;1988;Mystic Pizza;COMEDY;74;false
@@ -1154,7 +1154,7 @@ id;year;title;subject;popularity;awards
 1152;1948;Fort Apache;WESTERN;4;false
 1153;1937;Wee Willie Winkie;DRAMA;78;false
 1154;1987;Big Shots;ACTION;5;false
-1155;1988;Doin' Time on Planet Earth;COMEDY;44;True
+1155;1988;Doin' Time on Planet Earth;COMEDY;44;true
 1156;1983;All the Right Moves;DRAMA;65;false
 1157;1987;Some Kind of Wonderful;DRAMA;16;false
 1158;1990;All New Tales from the Crypt, A Trilogy;HORROR;33;false
@@ -1173,43 +1173,43 @@ id;year;title;subject;popularity;awards
 1171;1940;Dark Command;WESTERN;52;false
 1172;1986;Peggy Sue Got Married;DRAMA;62;false
 1173;1989;Dear America, Letters Home from Vietnam;WAR;57;false
-1174;1985;Prizzi's Honor;COMEDY;25;True
+1174;1985;Prizzi's Honor;COMEDY;25;true
 1175;1983;Man with Two Brains, The;COMEDY;68;false
 1176;1984;Crimes of Passion;DRAMA;4;false
 1177;1985;Jewel of the Nile, The;ACTION;68;false
 1178;1984;Romancing the Stone;ACTION;83;false
-1179;1988;Accidental Tourist, The;COMEDY;56;True
+1179;1988;Accidental Tourist, The;COMEDY;56;true
 1180;1955;Sea Chase, The;WAR;4;false
 1181;1958;Another Time, Another Place;DRAMA;4;false
 1182;1988;Cannibal Women in the Avocado Jungle of Death;COMEDY;56;false
 1183;1986;Mr Love.;COMEDY;10;false
-1184;1968;2001: A Space Odyssey;SCIENCE FICTION;83;false
-1185;1966;Persona;DRAMA;81;True
-1186;1973;Scenes from a Marriage;DRAMA;3;True
+1184;1968;2001: A Space Odyssey;SCIENCE_FICTION;83;false
+1185;1966;Persona;DRAMA;81;true
+1186;1973;Scenes from a Marriage;DRAMA;3;true
 1187;1968;Hour of the Wolf;DRAMA;37;false
 1188;1969;Passion of Anna, The;DRAMA;6;false
-1189;1984;Dangerous Moves;DRAMA;7;True
-1190;1957;Sayonara;DRAMA;19;True
+1189;1984;Dangerous Moves;DRAMA;7;true
+1190;1957;Sayonara;DRAMA;19;true
 1191;1968;Where Eagles Dare;WAR;57;false
 1192;1985;Teen Wolf;DRAMA;58;false
 1193;1990;Amazon;ACTION;30;false
-1194;1973;Paper Chase, The;DRAMA;7;True
-1195;1959;Virgin Spring, The;DRAMA;8;True
+1194;1973;Paper Chase, The;DRAMA;7;true
+1195;1959;Virgin Spring, The;DRAMA;8;true
 1196;1970;Spider's Stratagem;DRAMA;45;false
 1197;1971;Play Misty for Me;MYSTERY;47;false
 1198;1981;Going Ape;COMEDY;65;false
-1199;1967;Cool Hand Luke;DRAMA;49;True
+1199;1967;Cool Hand Luke;DRAMA;49;true
 1200;1988;Phantom of the Ritz;HORROR;85;false
-1201;1990;Crash & Burn;SCIENCE FICTION;75;false
+1201;1990;Crash & Burn;SCIENCE_FICTION;75;false
 1202;1991;After Dark My Sweet;MYSTERY;33;false
 1203;1992;Christopher Columbus: The Discovery;ADVENTURE;39;false
 1204;1986;Young Sherlock Holmes;MYSTERY;16;false
 1205;1991;Doc Hollywood;COMEDY;64;false
 1206;1988;Baja Oklahoma;COMEDY;71;false
-1207;1986;Aliens;SCIENCE FICTION;82;false
-1208;1992;Alien Three;SCIENCE FICTION;59;false
-1209;1997;Alien: resurrection;SCIENCE FICTION;60;false
-1210;1979;Alien;SCIENCE FICTION;83;false
+1207;1986;Aliens;SCIENCE_FICTION;82;false
+1208;1992;Alien Three;SCIENCE_FICTION;59;false
+1209;1997;Alien: resurrection;SCIENCE_FICTION;60;false
+1210;1979;Alien;SCIENCE_FICTION;83;false
 1211;1985;One Woman or Two;COMEDY;64;false
 1212;1984;Soggy Bottom U. S. A.;COMEDY;50;false
 1213;1973;Bang the Drum Slowly;DRAMA;73;false
@@ -1226,8 +1226,8 @@ id;year;title;subject;popularity;awards
 1224;1990;Sounds of the Seventies...& the Beat Goes;MUSIC;13;false
 1225;1988;Bird;DRAMA;24;false
 1226;1955;Meet Millie;DRAMA;82;false
-1227;1987;Hell Comes to Frogtown;SCIENCE FICTION;74;false
-1228;1966;Fortune Cookie, The;COMEDY;3;True
+1227;1987;Hell Comes to Frogtown;SCIENCE_FICTION;74;false
+1228;1966;Fortune Cookie, The;COMEDY;3;true
 1229;1990;Sun Shines Bright, The;ACTION;46;false
 1230;1987;Squeeze, The;ACTION;23;false
 1231;1970;Start the Revolution Without Me;COMEDY;62;false
@@ -1235,8 +1235,8 @@ id;year;title;subject;popularity;awards
 1233;1990;Bright Lights, Big City;DRAMA;30;false
 1234;1987;Lost Boys, The;HORROR;67;false
 1235;1989;Cookie;COMEDY;43;false
-1236;1974;Conversation, The;DRAMA;59;True
-1237;1973;American Graffiti;COMEDY;39;True
+1236;1974;Conversation, The;DRAMA;59;true
+1237;1973;American Graffiti;COMEDY;39;true
 1238;1953;Dangerous When Wet;MUSIC;67;false
 1239;1980;Stir Crazy;COMEDY;40;false
 1240;1989;Young Einstein;COMEDY;47;false
@@ -1244,7 +1244,7 @@ id;year;title;subject;popularity;awards
 1242;1973;Cahill, United States Marshal;WESTERN;12;false
 1243;1989;Savage Intruder, The;HORROR;24;false
 1244;1992;Sheltering Sky, The;DRAMA;64;false
-1245;1982;An Officer & a Gentleman;DRAMA;1;True
+1245;1982;An Officer & a Gentleman;DRAMA;1;true
 1246;1987;Black Widow;MYSTERY;54;false
 1247;1986;Legal Eagles;COMEDY;39;false
 1248;1970;Bloody Mama;ACTION;17;false
@@ -1259,7 +1259,7 @@ id;year;title;subject;popularity;awards
 1257;1956;Searchers, The;WESTERN;9;false
 1258;1979;Meteor;ACTION;5;false
 1259;1955;Rebel Without a Cause;DRAMA;82;false
-1260;1961;West Side Story;MUSIC;38;True
+1260;1961;West Side Story;MUSIC;38;true
 1261;1970;Trash;COMEDY;68;false
 1262;1966;A Big Hand for the Little Lady;COMEDY;12;false
 1263;1966;A Fine Madness;COMEDY;6;false
@@ -1279,22 +1279,22 @@ id;year;title;subject;popularity;awards
 1277;1987;Heat;MYSTERY;69;false
 1278;1993;Employee's Entrance;DRAMA;0;false
 1279;1947;Night Is My Future;DRAMA;17;false
-1280;1990;Witches, The;SCIENCE FICTION;18;false
+1280;1990;Witches, The;SCIENCE_FICTION;18;false
 1281;1953;Vera Cruz;ACTION;71;false
 1282;1954;Apache;WESTERN;78;false
 1283;1977;Twilight's Last Gleaming;DRAMA;84;false
 1284;1979;Frisco Kid, The;COMEDY;10;false
-1285;1954;Bank on the Stars;DRAMA;;false
+1285;1954;Bank on the Stars;DRAMA;NULL;false
 1286;1987;Law of Desire;DRAMA;73;false
 1287;1966;Quiller Memorandum, The;MYSTERY;34;false
 1288;1962;Longest Day, The;WAR;7;false
 1289;1986;Name of the Rose, The;DRAMA;8;false
 1290;1988;Bloodsport;ACTION;78;false
 1291;1986;Torment;HORROR;8;false
-1292;1988;Pelle the Conqueror;DRAMA;14;True
+1292;1988;Pelle the Conqueror;DRAMA;14;true
 1293;1981;Taps;DRAMA;84;false
 1294;1991;Freshman, The;COMEDY;32;false
-1295;1987;Last Emperor, The;DRAMA;1;True
+1295;1987;Last Emperor, The;DRAMA;1;true
 1296;1962;Grim Reaper, The;DRAMA;35;false
 1297;1983;Le Dernier Combat;DRAMA;72;false
 1298;1989;Too Beautiful for You;DRAMA;35;false
@@ -1316,7 +1316,7 @@ id;year;title;subject;popularity;awards
 1314;1986;Boy in Blue, The;DRAMA;63;false
 1315;1991;Killer Tomatoes Strike Back;COMEDY;24;false
 1316;1979;Attack of the Killer Tomatoes;COMEDY;47;false
-1317;1987;Untouchables, The;DRAMA;7;True
+1317;1987;Untouchables, The;DRAMA;7;true
 1318;1986;Wise Guys;COMEDY;16;false
 1319;1989;American Autobahn;DRAMA;75;false
 1320;1990;Final Alliance, The;ACTION;10;false
@@ -1339,7 +1339,7 @@ id;year;title;subject;popularity;awards
 1337;1948;Wild Frontier, The;WESTERN;61;false
 1338;1968;Firemen's Ball, The;COMEDY;8;false
 1339;1983;Local Hero;COMEDY;54;false
-1340;1971;French Connection, The;DRAMA;88;True
+1340;1971;French Connection, The;DRAMA;88;true
 1341;1985;To Live & Die in L. A.;ACTION;70;false
 1342;1961;Ferry to Hong Kong;DRAMA;77;false
 1343;1983;Eddie Murphy, Delirious;COMEDY;6;false
@@ -1354,13 +1354,13 @@ id;year;title;subject;popularity;awards
 1352;1966;Ride in the Whirlwind;WESTERN;26;false
 1353;1970;Powderkeg;WESTERN;26;false
 1354;1953;I Confess;DRAMA;63;false
-1355;1935;Thirty-Nine Steps, The;SCIENCE FICTION;8;false
+1355;1935;Thirty-Nine Steps, The;SCIENCE_FICTION;8;false
 1356;1969;Topaz;MYSTERY;12;false
 1357;1930;Murder;MYSTERY;50;false
 1358;1954;Dial M for Murder;MYSTERY;52;false
 1359;1937;Young & Innocent;MYSTERY;43;false
 1360;1976;Creature from Black Lake;HORROR;88;false
-1361;1981;Chariots of Fire;DRAMA;6;True
+1361;1981;Chariots of Fire;DRAMA;6;true
 1362;1982;Monty Python Live at the Hollywood Bowl;COMEDY;81;false
 1363;1975;Man Who Would Be King, The;DRAMA;6;false
 1364;1981;Victory;DRAMA;39;false
@@ -1369,35 +1369,35 @@ id;year;title;subject;popularity;awards
 1367;1990;Chattahoochee;DRAMA;30;false
 1368;1985;Angelic Conversation, The;COMEDY;41;false
 1369;1986;Down by Law;COMEDY;49;false
-1370;1984;Killing Fields, The;DRAMA;6;True
+1370;1984;Killing Fields, The;DRAMA;6;true
 1371;1992;Survival Zone;ACTION;25;false
 1372;1979;Monty Python's Life of Brian;COMEDY;11;false
 1373;1983;Monty Python's the Meaning of Life;COMEDY;33;false
 1374;1971;Red Tent, The;ACTION;7;false
 1375;1945;Dakota;WESTERN;27;false
-1376;1952;Viva Zapata!;DRAMA;86;True
+1376;1952;Viva Zapata!;DRAMA;86;true
 1377;1968;Green Berets, The;WAR;36;false
 1378;1990;Big Bad John;ACTION;84;false
 1379;1937;Ticket of Leave Man, The;MYSTERY;45;false
 1380;1956;D-Day, The Sixth of June;WAR;84;false
-1381;1974;Apprenticeship of Duddy Kravitz, The;DRAMA;64;True
-1382;1971;A Clockwork Orange;SCIENCE FICTION;83;True
+1381;1974;Apprenticeship of Duddy Kravitz, The;DRAMA;64;true
+1382;1971;A Clockwork Orange;SCIENCE_FICTION;83;true
 1383;1991;Full Metal Jacket;WAR;45;false
 1384;1943;Sanshiro Sugata;DRAMA;85;false
 1385;1991;Rhapsody in August;DRAMA;50;false
 1386;1946;No Regrets for Our Youth;DRAMA;31;false
 1387;1960;Bad Sleep Well, The;DRAMA;65;false
 1388;1951;Idiot, The;DRAMA;40;false
-1389;1951;Rashomon;DRAMA;59;True
+1389;1951;Rashomon;DRAMA;59;true
 1390;1962;Sanjuro;MYSTERY;6;false
 1391;1955;Seven Samurai;DRAMA;9;false
 1392;1957;Throne of Blood;DRAMA;60;false
 1393;1961;Yojimbo;ACTION;60;false
-1394;1980;Kagemusha;DRAMA;74;True
+1394;1980;Kagemusha;DRAMA;74;true
 1395;1952;Ikiru;DRAMA;36;false
 1396;1987;Empire of Spiritual Ninja;ACTION;26;false
-1397;1986;Ninja, the Violent Sorcerer;ACTION;;false
-1398;1926;Metropolis;SCIENCE FICTION;49;false
+1397;1986;Ninja, the Violent Sorcerer;ACTION;NULL;false
+1398;1926;Metropolis;SCIENCE_FICTION;49;false
 1399;1946;Cloak & Dagger;MYSTERY;55;false
 1400;1920;Spiders;DRAMA;29;false
 1401;1954;Human Desire;DRAMA;27;false
@@ -1432,7 +1432,7 @@ id;year;title;subject;popularity;awards
 1430;1980;Ffolkes;ACTION;62;false
 1431;1970;Chisum;WESTERN;72;false
 1432;1990;Hunt for Red October, The;DRAMA;8;false
-1433;1966;Closely Watched Trains;DRAMA;75;True
+1433;1966;Closely Watched Trains;DRAMA;75;true
 1434;1973;Executive Action;DRAMA;6;false
 1435;1942;Flying Tigers;ACTION;61;false
 1436;1991;Father's Little Dividend;COMEDY;52;false
@@ -1451,7 +1451,7 @@ id;year;title;subject;popularity;awards
 1449;1990;Blood in, Blood Out;DRAMA;88;false
 1450;1989;Wrong Arm of the Law, The;COMEDY;25;false
 1451;1987;Orphans;DRAMA;21;false
-1452;1976;All the President's Men;DRAMA;45;True
+1452;1976;All the President's Men;DRAMA;45;true
 1453;1987;J-Men Forever;ACTION;59;false
 1454;1969;Wild Bunch, The;WESTERN;50;false
 1455;1988;Judgement in Berlin;DRAMA;13;false
@@ -1464,7 +1464,7 @@ id;year;title;subject;popularity;awards
 1462;1989;Cyborg;ACTION;31;false
 1463;1979;Prisoner of Zenda, The;COMEDY;12;false
 1464;1983;Scream;HORROR;24;false
-1465;1986;Assault, The;DRAMA;71;True
+1465;1986;Assault, The;DRAMA;71;true
 1466;1951;Flying Leathernecks;ACTION;23;false
 1467;1985;What Comes Around;DRAMA;49;false
 1468;1980;Mon Oncle D'Amerique;COMEDY;71;false
@@ -1474,11 +1474,11 @@ id;year;title;subject;popularity;awards
 1472;1991;Burning Poles, Cecil Taylor in Performance;MUSIC;82;false
 1473;1987;Russkies;ACTION;87;false
 1474;1990;My Blue Heaven;COMEDY;63;false
-1475;1990;Altered States;SCIENCE FICTION;22;false
+1475;1990;Altered States;SCIENCE_FICTION;22;false
 1476;1972;Cowboys, The;WESTERN;58;false
 1477;1985;Code Name, Emerald;DRAMA;22;false
-1478;1970;Patton;WAR;8;True
-1479;1969;Midnight Cowboy;DRAMA;33;True
+1478;1970;Patton;WAR;8;true
+1479;1969;Midnight Cowboy;DRAMA;33;true
 1480;1985;Falcon & the Snowman, The;DRAMA;61;false
 1481;1976;Maitresse;DRAMA;39;false
 1482;1987;Disorderlies;COMEDY;69;false
@@ -1495,12 +1495,12 @@ id;year;title;subject;popularity;awards
 1493;1993;Duel;MYSTERY;48;false
 1494;1991;Separate but Equal;DRAMA;56;false
 1495;1924;Gosta Berling's Saga;DRAMA;63;false
-1496;1986;Platoon;DRAMA;8;True
-1497;1963;Crawling Hand, The;SCIENCE FICTION;79;false
+1496;1986;Platoon;DRAMA;8;true
+1497;1963;Crawling Hand, The;SCIENCE_FICTION;79;false
 1498;1971;Willy Wonka & the Chocolate Factory;MUSIC;65;false
 1499;1971;Joe Kidd;WESTERN;79;false
 1500;1985;Santa Claus, The Movie;COMEDY;19;false
-1501;1938;Boys Town;DRAMA;21;True
+1501;1938;Boys Town;DRAMA;21;true
 1502;1990;Erasure, Live Wild!;MUSIC;48;false
 1503;1982;A Question of Honor;DRAMA;80;false
 1504;1947;Check Your Guns;WESTERN;80;false
@@ -1521,7 +1521,7 @@ id;year;title;subject;popularity;awards
 1519;1960;Alamo, The;ACTION;29;false
 1520;1986;La Chevre, (The Goat);DRAMA;24;false
 1521;1985;Les Comperes;COMEDY;54;false
-1522;1990;Dead Poets Society;DRAMA;8;True
+1522;1990;Dead Poets Society;DRAMA;8;true
 1523;1952;Othello, The Lost Masterpiece;DRAMA;23;false
 1524;1949;Battleground, The;WAR;7;false
 1525;1976;Kings of the Road (In the Course of Time);DRAMA;41;false
@@ -1613,7 +1613,7 @@ id;year;title;subject;popularity;awards
 1611;1991;Pink Panther, The;COMEDY;77;false
 1612;1991;Two-Way Stretch;COMEDY;7;false
 1613;1988;Face at the Window, The;HORROR;79;false
-1614;1958;Tom Thumb;SCIENCE FICTION;30;false
+1614;1958;Tom Thumb;SCIENCE_FICTION;30;false
 1615;1989;Beartooth;ACTION;70;false
 1616;1979;James Taylor in Concert;MUSIC;38;false
 1617;1942;Gangbusters;DRAMA;31;false
