@@ -1,11 +1,7 @@
 package com.mycompany.myapp;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.assertThat;
 
-import java.math.BigDecimal;
-import java.math.BigInteger;
-import java.util.Arrays;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -25,6 +21,7 @@ import com.mycompany.myapp.domain.Authority;
 import com.mycompany.myapp.domain.Movie;
 import com.mycompany.myapp.domain.User;
 import com.mycompany.myapp.service.UserService;
+import com.mycompany.myapp.service.dto.ActorDTO;
 
 import org.junit.Ignore;
 import org.junit.jupiter.api.BeforeEach;
@@ -446,24 +443,8 @@ public class MainIT {
         Query sql = em.createNativeQuery("SELECT DISTINCT * FROM actor_movie am WHERE NOT EXISTS ( SELECT 1 FROM actor WHERE NOT EXISTS ( SELECT 1 FROM actor_movie am2 WHERE am.actor_id = am2.actor_id AND am2.movie_id = 1 ) )", Actor.class);
         
         // JPQL
-        // TypedQuery<Actor> jpql = em.createQuery("SELECT a.id FROM (SELECT actor.id FROM Actor actor) a", Actor.class);
         
         // Criteria
-        // CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
-        // CriteriaQuery<Actor> criteriaQuery = criteriaBuilder.createQuery(Actor.class);
-        // Root<Actor> root = criteriaQuery.from(Actor.class);
-        
-        // Subquery<Actor> subQuery = criteriaQuery.subquery(Actor.class);
-        // Root<Actor> actor = subQuery.from(Actor.class);
-        // actor.join("movies");
-        // subQuery.select(actor.get("id"));
-
-        // criteriaQuery.where(root.get("id").in(subQuery));
-        // TypedQuery<Actor> query = em.createQuery(criteriaQuery);
-
-        // List<Actor> results = jpql.getResultList();
-        // assertThat(results).isNotEmpty();
-        // assertThat(results.size()).isEqualTo(2177);
         
     }
 
@@ -558,7 +539,7 @@ public class MainIT {
 
     @Test
     @Transactional
-    public void assertThatCountMoviesGrouoByAwards() {
+    public void assertThatCountMoviesGroupByAwards() {
         // SQL
         Query sql = em.createNativeQuery("SELECT awards,COUNT(1) FROM movie m GROUP BY awards", Tuple.class);
         
@@ -611,5 +592,144 @@ public class MainIT {
         // Criteria
 
     }
+
+    @Test
+    @Transactional
+    public void assertThatCountMoviesPopulatiryGreatherThanNinetyGroupByPopularity() {
+        // SQL
+        
+        // JPQL
+        
+        // Criteria
+
+    }
+
+    @Test
+    @Transactional
+    public void assertThatCountMovieByYearHavingYearGreatherThanNinety() {
+        // SQL
+        Query sql = em.createNativeQuery("SELECT year,COUNT(1) FROM movie m GROUP BY year HAVING year > '1990'", Tuple.class);
+        
+        // JPQL
+        TypedQuery<Tuple> jpql = em.createQuery("SELECT movie.year, COUNT(1) as total FROM Movie movie GROUP BY year HAVING year > 1990", Tuple.class);
+        
+        // Criteria
+        CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
+        CriteriaQuery<Tuple> criteriaQuery = criteriaBuilder.createQuery(Tuple.class);
+        Root<Movie> root = criteriaQuery.from(Movie.class);
+        criteriaQuery.multiselect(root.get("year"), criteriaBuilder.count(root).alias("total"));
+        criteriaQuery.groupBy(root.get("year"));
+        criteriaQuery.having(criteriaBuilder.greaterThan(root.get("year"), 1990));
+        TypedQuery<Tuple> query = em.createQuery(criteriaQuery);
+
+        List<Tuple> results = query.getResultList();
+        assertThat(results.size()).isEqualTo(5);
+    }
+
+    @Test
+    @Transactional
+    public void assertThatMoviesYearWithPopulatiryAvgGreatherThanSixty() {
+        // SQL
+        
+        // JPQL
+        
+        // Criteria
+
+    }
+
+    @Test
+    @Transactional
+    public void assertThatMoviesYearWithPopulatiryAvgLessThanFourtyAndHaveAward() {
+        // SQL
+        
+        // JPQL
+        
+        // Criteria
+
+    }
+
+    @Ignore
+    @Test
+    @Transactional
+    public void assertThatUnionMovie() {
+        // SQL
+        Query sql = em.createNativeQuery("SELECT id, name FROM actor a union all select id, title FROM movie m", Tuple.class);
+        List<Tuple> sqlResults = sql.getResultList();
+        assertThat(sqlResults.size()).isEqualTo(3836);
+
+        // JPQL
+        TypedQuery<Tuple> jpql = em.createQuery("SELECT id, name FROM Actor actor", Tuple.class);
+        TypedQuery<Tuple> jpqlUnion = em.createQuery("SELECT id, title FROM Movie movie", Tuple.class);
+        
+        // Criteria
+        CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
+        CriteriaQuery<Tuple> criteriaQuery = criteriaBuilder.createQuery(Tuple.class);
+        Root<Actor> root = criteriaQuery.from(Actor.class);
+        criteriaQuery.multiselect(root.get("id"), root.get("name"));
+        TypedQuery<Tuple> query = em.createQuery(criteriaQuery);
+
+        CriteriaQuery<Tuple> criteriaQueryMovie = criteriaBuilder.createQuery(Tuple.class);
+        Root<Movie> movieRoot = criteriaQueryMovie.from(Movie.class);
+        criteriaQueryMovie.multiselect(movieRoot.get("id"), movieRoot.get("title"));
+        TypedQuery<Tuple> queryUnion = em.createQuery(criteriaQueryMovie);
+
+        List<Tuple> results = query.getResultList();
+        results.addAll(queryUnion.getResultList());
+
+        assertThat(results.size()).isEqualTo(3836);
+    }  
+
+    @Test
+    @Transactional
+    public void assertThatConstructors() {
+        // SQL
+        // Query sql = em.createNativeQuery("SELECT id, name FROM actor m");
+        
+        // JPQL
+        TypedQuery<ActorDTO> jpql = em.createQuery("SELECT new com.mycompany.myapp.service.dto.ActorDTO(actor.id, actor.name) FROM Actor actor", ActorDTO.class);
+        
+        // Criteria
+        CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
+        CriteriaQuery<ActorDTO> criteriaQuery = criteriaBuilder.createQuery(ActorDTO.class);
+        Root<Actor> root = criteriaQuery.from(Actor.class);
+        criteriaQuery.select(criteriaBuilder.construct(ActorDTO.class, root.get("id"), root.get("name")));
+        TypedQuery<ActorDTO> query = em.createQuery(criteriaQuery);
+
+        List<ActorDTO> results = query.getResultList();
+        assertThat(results.size()).isEqualTo(2177);
+        assertThat(results.get(0).getName()).isEqualTo("Antonio Banderas");
+    }
+
+
+    @Test
+    @Transactional
+    public void assertThatActorWithAge() {
+        // SQL
+        
+        // JPQL
+        
+        // Criteria
+
+    }
+
+    @Test
+    @Transactional
+    public void assertThatDistinctYear() {
+        // SQL
+        Query sql = em.createNativeQuery("SELECT distinct(year) FROM movie m");
+        
+        // JPQL
+        TypedQuery<Integer> jpql = em.createQuery("SELECT distinct(movie.year) FROM Movie movie", Integer.class);
+        
+        // Criteria
+        CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
+        CriteriaQuery<Integer> criteriaQuery = criteriaBuilder.createQuery(Integer.class);
+        Root<Movie> root = criteriaQuery.from(Movie.class);
+        criteriaQuery.select(root.get("year")).distinct(true);
+        TypedQuery<Integer> query = em.createQuery(criteriaQuery);
+
+        List<Integer> results = jpql.getResultList();
+        assertThat(results.size()).isEqualTo(74);
+    }   
 
 }

@@ -5,18 +5,14 @@ import java.io.Serializable;
 /**
  * A DTO for the {@link com.mycompany.myapp.domain.Actor} entity.
  */
-public class ActorDTO implements Serializable {
+public class ActorWithAgeDTO implements Serializable {
     
     private Long id;
 
     private String name;
-    
-    public ActorDTO() {}
 
-    public ActorDTO(Long id, String name) {
-        this.id = id;
-        this.name = name;
-    }
+    private int age;
+
     
     public Long getId() {
         return id;
@@ -34,16 +30,24 @@ public class ActorDTO implements Serializable {
         this.name = name;
     }
 
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;
         }
-        if (!(o instanceof ActorDTO)) {
+        if (!(o instanceof ActorWithAgeDTO)) {
             return false;
         }
 
-        return id != null && id.equals(((ActorDTO) o).id);
+        return id != null && id.equals(((ActorWithAgeDTO) o).id);
     }
 
     @Override
@@ -54,9 +58,10 @@ public class ActorDTO implements Serializable {
     // prettier-ignore
     @Override
     public String toString() {
-        return "ActorDTO{" +
+        return "ActorWithAgeDTO{" +
             "id=" + getId() +
             ", name='" + getName() + "'" +
+            ", age='" + getAge() + "'" +
             "}";
     }
 }
