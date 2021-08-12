@@ -363,3 +363,57 @@ public interface Specification<T> {
   Predicate toPredicate(Root<T> root, CriteriaQuery query, CriteriaBuilder cb);
 }
 ```
+
+# Referencias
+
+[O que é um SGBD?](https://dicasdeprogramacao.com.br/o-que-e-um-sgbd/)
+
+[Sistema de gerenciamento de banco de dados](https://pt.wikipedia.org/wiki/Sistema_de_gerenciamento_de_banco_de_dados)
+
+[Relational algebra](https://en.wikipedia.org/wiki/Relational_algebra)
+
+[10 Easy Steps to a Complete Understanding of SQL
+](https://dzone.com/articles/10-easy-steps-to-a-complete-understanding-of-sql)
+
+[How does a SQL query work?](https://stackoverflow.com/a/67148174)
+
+[Java e JPA: Consultas avançadas, performance e modelos complexos](https://www.alura.com.br/curso-online-java-jpa-consultas-avancadas-performance-modelos-complexos?gclid=CjwKCAjw0qOIBhBhEiwAyvVcf-kEeibKWAp8IB96fPD7BOsRBYwBDONEgBqti-kkJG0knNxvEW-VcxoCybMQAvD_BwE)
+
+[JPA Criteria API Queries
+](https://www.objectdb.com/java/jpa/query/criteria)
+
+[What is the difference between a criteria, a predicate, and a specification?](https://stackoverflow.com/a/47604610)
+
+[Java Persistence/Criteria](https://en.wikibooks.org/wiki/Java_Persistence/Criteria)
+
+[Combining JPA And/Or Criteria Predicates](https://www.baeldung.com/jpa-and-or-criteria-predicates)
+
+[JPA Criteria Queries](https://www.baeldung.com/hibernate-criteria-queries)
+
+[Use Criteria Queries in a Spring Data Application](https://www.baeldung.com/spring-data-criteria-queries)
+
+[Chapter 14. HQL: The Hibernate Query Language](https://docs.jboss.org/hibernate/orm/3.3/reference/en/html/queryhql.html)
+
+[Chapter 16. Criteria Queries](https://docs.jboss.org/hibernate/orm/3.5/reference/en/html/querycriteria.html)
+
+[Advanced Spring Data JPA - Specifications and Querydsl](https://spring.io/blog/2011/04/26/advanced-spring-data-jpa-specifications-and-querydsl/)
+
+[10. Thinking that 50ms is fast query execution](https://blog.jooq.org/2013/08/12/10-more-common-mistakes-java-developers-make-when-writing-sql/)
+
+[5. Not knowing about the N+1 problem](https://blog.jooq.org/2014/05/26/yet-another-10-common-mistakes-java-developer-make-when-writing-sql-you-wont-believe-the-last-one/)
+
+[Best way to understand complex SQL statements?](https://stackoverflow.com/questions/379062/best-way-to-understand-complex-sql-statements)
+
+[Semi Join and Anti Join Should Have Their Own Syntax in SQL](https://blog.jooq.org/2015/10/13/semi-join-and-anti-join-should-have-its-own-syntax-in-sql/)
+
+[A comprehensive interpretation of PostgreSQL and Greenplum’s hash join](https://developpaper.com/a-comprehensive-interpretation-of-postgresql-and-greenplums-hash-join/)
+
+[Advanced SQL: Relational division in jOOQ](https://blog.jooq.org/2012/03/30/advanced-sql-relational-division-in-jooq/)
+
+[PostgreSQL and relational algebra (Equi-Join, Semi-Join, Anti-Join, Division)](https://www.programmersought.com/article/24551080339/)
+
+[10.2. JPQL Language Reference](https://docs.oracle.com/html/E13946_04/ejb3_langref.html)
+
+[Is your query too complex for JPA and Hibernate?](https://thorben-janssen.com/query-complex-jpa-hibernate/)
+
+[FetchMode in Hibernate](https://www.baeldung.com/hibernate-fetchmode)
