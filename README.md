@@ -364,7 +364,7 @@ public interface Specification<T> {
 }
 ```
 
-# Referencias
+# Referência
 
 [O que é um SGBD?](https://dicasdeprogramacao.com.br/o-que-e-um-sgbd/)
 
