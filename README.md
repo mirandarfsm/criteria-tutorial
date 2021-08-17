@@ -378,17 +378,20 @@ private Specification<GrupoAno> createProjection() {
       return null;
   };
 }
-
+```
+```java
 private Specification<GrupoAno> filterByIdIn(List<Long> ids) {
   return (root, query, builder) -> root.get(GrupoAno_.id).in(ids);
 }
-
+```
+```java
 private Specification<GrupoAno> filterByExpirado(boolean expirado) {
   return (root, query, build) -> {
       return build.greaterThan(root.get(GrupoAno_.dataValidade), Instant.now());
   };
 }
-
+```
+```java
 private Specification<GrupoAno> filterByRoles() {
   return (root, query, builder) -> {
       List<String> grupos = SecurityUtils.getCurrentUsersGrupos();
