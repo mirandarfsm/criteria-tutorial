@@ -286,7 +286,7 @@ Esta é a operação de junção mais comum. Tem dois sub-niveis:
 Este conceito relacional pode ser expresso de duas maneiras em sql: usando um predicado in ou usando um predicado exists. “Semi” significa “metade” em latim. Este tipo de junção é usado para juntar apenas “metade” de uma referência de tabela.
 
 ![image](https://user-images.githubusercontent.com/6695037/129267986-5468f8a8-0ac9-4e9d-83a7-397298deb59c.png)
-  
+
 embora não haja uma regra geral sobre se você deve preferir in ou exists, podemos concluir que:
 
 - predicados in tendem a ser mais legíveis do que os predicados existents
@@ -298,7 +298,7 @@ embora não haja uma regra geral sobre se você deve preferir in ou exists, pode
 Este conceito relacional é exatamente o oposto de um semi-join. Você pode produzi-lo simplesmente adicionando uma palavra-chave not aos predicados in ou exists.
 
 ![image](https://user-images.githubusercontent.com/6695037/129267964-ca754f15-f20c-46e3-877f-9dd1ed00cfcc.png)
-  
+
 Aplicam-se as mesmas regras em relação ao desempenho, legibilidade e expressividade
 
 ### division
@@ -311,9 +311,17 @@ A division é realmente um bicho de sete cabeças. Em resumo, se cross join é m
 
 A operação de Fetch pode ser usada em um Join para buscar os objetos relacionados em uma única consulta. Isso evita consultas adicionais para cada um dos relacionamentos do objeto e garante que os relacionamentos LAZY sejam carregados.
 
+```java
+Fetch<User, Authority> authorities = root.fetch("authorities");
+```
+
 # Group by
 
 A cláusula Group By permite que informações resumidas sejam calculadas em um conjunto de objetos. Group By é normalmente usado em conjunto com funções de agregação.
+
+```java
+criteriaQuery.groupBy(root.get("year"));
+```
 
 ### Aggregation functions
 
@@ -336,6 +344,10 @@ As funções agregadas são definidas no CriteriaBuilder e incluem:
 
 A cláusula Having to permite que os resultados de um Group by sejam filtrados. A cláusula having to é definida usando os Predicate's igual no Where.
 
+```java
+criteriaQuery.having(criteriaBuilder.greaterThan(root.get("year"), 1990));
+```
+
 # Union?
 
 O JPQL oferece suporte a um conjunto de recursos que permite criar consultas até uma certa complexidade. Essas consultas são boas o suficiente para a maioria dos casos de uso. Mas se quiser implementar consultas utilizando SQL mais avançado, não terá suporte, tendo que utilizar consultas nativas.
@@ -354,9 +366,17 @@ Select define o que é selecionado por uma consulta. Um Select pode ser qualquer
 
 O Constructor pode ser usado com uma classe e valores para retornar objetos de dados de uma consulta de critérios. Esses não serão objetos gerenciados e a classe deve definir um construtor que corresponda aos argumentos e tipos. As consultas do construtor podem ser usadas para selecionar dados parciais ou dados de relatório sobre objetos e obter de volta uma instância de classe em vez de uma matriz de objeto ou tupla.
 
+```java
+criteriaBuilder.construct(ActorDTO.class, root.get("id"), root.get("name"))
+```
+
 ## Distinct
 
 Define se a consulta deve filtrar resultados duplicados (o padrão é falso).
+
+```java
+criteriaQuery.distinct(true);
+```
 
 # Specification
 
