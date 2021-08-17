@@ -270,8 +270,8 @@ Esses termos são comumente usados ​​em álgebra relacional. No SQL usa-se t
 
 Esse produz um produto cruzado das duas referências de tabela unidas, combinando cada registro da primeira referência de tabela com cada registro da segunda referência de tabela. Isso pode ser alcançado com referências a tabelas separadas por vírgulas na cláusula from. Nos raros casos em que é realmente necessário, você pode escrever uma junção cruzada explicitamente.
 
-![image](/uploads/6c49f27f3e7616b82727f181ae5fbf4a/image.png)
-
+![image](https://user-images.githubusercontent.com/6695037/129268044-e06cffd0-bda1-48d9-8f51-128d0e5b3485.png)
+    
 ### equi join
 
 Esta é a operação de junção mais comum. Tem dois sub-niveis:
@@ -279,14 +279,14 @@ Esta é a operação de junção mais comum. Tem dois sub-niveis:
 - inner join (or just join)
 - outer join (as left, right, full outer join)
 
-![image](/uploads/e2daf5b2862a9f23fc2e01e3d707db52/image.png)
-
+![image](https://user-images.githubusercontent.com/6695037/129268019-0a1e846f-4a01-403f-8e73-0d24c14f94e0.png)
+    
 ### semi join
 
 Este conceito relacional pode ser expresso de duas maneiras em sql: usando um predicado in ou usando um predicado exists. “Semi” significa “metade” em latim. Este tipo de junção é usado para juntar apenas “metade” de uma referência de tabela.
 
-![image](/uploads/cdd273782b993c4507f8a79854d08958/image.png)
-
+![image](https://user-images.githubusercontent.com/6695037/129267986-5468f8a8-0ac9-4e9d-83a7-397298deb59c.png)
+    
 embora não haja uma regra geral sobre se você deve preferir in ou exists, podemos concluir que:
 
 - predicados in tendem a ser mais legíveis do que os predicados existents
@@ -297,16 +297,16 @@ embora não haja uma regra geral sobre se você deve preferir in ou exists, pode
 
 Este conceito relacional é exatamente o oposto de um semi-join. Você pode produzi-lo simplesmente adicionando uma palavra-chave not aos predicados in ou exists.
 
-![image](/uploads/c50588b6c961ae88a558019f01047c19/image.png)
-
+![image](https://user-images.githubusercontent.com/6695037/129267964-ca754f15-f20c-46e3-877f-9dd1ed00cfcc.png)
+    
 Aplicam-se as mesmas regras em relação ao desempenho, legibilidade e expressividade
 
 ### division
 
 A division é realmente um bicho de sete cabeças. Em resumo, se cross join é multiplicação, division é o inverso. divisão é o inverso de uma operação de junção cruzada division são muito difíceis de expressar em sql.
 
-![image](/uploads/e334f0863b0766b190b4b14a31d79944/image.png)
-
+![image](https://user-images.githubusercontent.com/6695037/129267920-94c717aa-7903-4703-b696-ee6e815eb444.png)
+    
 ## Join Fetch
 
 A operação de Fetch pode ser usada em um Join para buscar os objetos relacionados em uma única consulta. Isso evita consultas adicionais para cada um dos relacionamentos do objeto e garante que os relacionamentos LAZY sejam carregados.
