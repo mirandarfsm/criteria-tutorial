@@ -145,6 +145,10 @@ Abra o arquivo `src/test/java/com/mycompany/myapp/MainIT.java` para edição
 
 Execute o teste `assertThatActorsTablesIsNotNull` e verifique se passou tudo certo!
 
+```
+./mvnw -P-webpack test -Dtest=MainIT#assertThatActorsTablesIsNotNull
+```
+
 # Debugando consultas
 
 Abra o arquivo `src/test/resources/config/application.yml`
@@ -361,6 +365,41 @@ Para ser capaz de definir Predicate's reutilizáveis, o Spring Data introduziu a
 ```java
 public interface Specification<T> {
   Predicate toPredicate(Root<T> root, CriteriaQuery query, CriteriaBuilder cb);
+}
+```
+
+### Exemplos
+
+```java
+private Specification<GrupoAno> createProjection() {
+  return (root, query, build) -> {
+      query.distinct(true);
+      root.fetch(GrupoAno_.grupo, JoinType.LEFT);
+      return null;
+  };
+}
+
+private Specification<GrupoAno> filterByIdIn(List<Long> ids) {
+  return (root, query, builder) -> root.get(GrupoAno_.id).in(ids);
+}
+
+private Specification<GrupoAno> filterByExpirado(boolean expirado) {
+  return (root, query, build) -> {
+      return build.greaterThan(root.get(GrupoAno_.dataValidade), Instant.now());
+  };
+}
+
+private Specification<GrupoAno> filterByRoles() {
+  return (root, query, builder) -> {
+      List<String> grupos = SecurityUtils.getCurrentUsersGrupos();
+      Subquery<Grupo> grupoSubquery = query.subquery(Grupo.class);
+      Root<Grupo> grupo = grupoSubquery.from(Grupo.class);
+      Predicate equal = builder.equal(grupo.get(Grupo_.id), root.get(GrupoAno_.grupo));
+      Predicate in = grupo.join(Grupo_.om, JoinType.LEFT).get(OM_.siglaQueue).in(grupos);
+      Predicate where = builder.and(equal, in);
+      grupoSubquery.select(grupo).distinct(true).where(where);
+      return builder.exists(grupoSubquery);
+  };
 }
 ```
 
