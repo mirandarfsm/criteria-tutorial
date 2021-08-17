@@ -1,8 +1,14 @@
 package com.mycompany.myapp.service;
 
+import java.time.Instant;
+import java.util.Arrays;
 import java.util.List;
 
+import javax.persistence.criteria.Join;
 import javax.persistence.criteria.JoinType;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
+import javax.persistence.criteria.Subquery;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -98,4 +104,36 @@ public class ActorQueryService extends QueryService<Actor> {
         }
         return specification;
     }
+
+    private Specification<Actor> createProjection() {
+        return (root, query, build) -> {
+            query.distinct(true);
+            root.fetch(Actor_.movies, JoinType.LEFT);
+            return null;
+        };
+      }
+      
+      private Specification<Actor> filterByIdIn(List<Long> ids) {
+        return (root, query, builder) -> root.get(Actor_.id).in(ids);
+      }
+      
+      private Specification<Movie> filterByYearGreaterThanToday() {
+        return (root, query, build) -> {
+            return build.greaterThan(root.get(Movie_.year), 80);
+        };
+      }
+      
+      private Specification<Actor> filterByRoles() {
+        return (root, query, builder) -> {
+            List<String> movies = Arrays.asList("Beat Street", "Power");
+            Subquery<Movie> movieSubquery = query.subquery(Movie.class);
+            Root<Movie> movie = movieSubquery.from(Movie.class);
+            Join<Movie, Actor> join = movie.join(Movie_.actors, JoinType.LEFT);
+            Predicate equal = builder.equal(join.get(Actor_.id), root.get(Actor_.id));
+            Predicate in = movie.get(Movie_.title).in(movies);
+            Predicate where = builder.and(equal, in);
+            movieSubquery.select(movie).distinct(true).where(where);
+            return builder.exists(movieSubquery);
+        };
+      }
 }

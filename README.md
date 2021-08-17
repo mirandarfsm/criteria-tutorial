@@ -271,7 +271,7 @@ Esses termos são comumente usados ​​em álgebra relacional. No SQL usa-se t
 Esse produz um produto cruzado das duas referências de tabela unidas, combinando cada registro da primeira referência de tabela com cada registro da segunda referência de tabela. Isso pode ser alcançado com referências a tabelas separadas por vírgulas na cláusula from. Nos raros casos em que é realmente necessário, você pode escrever uma junção cruzada explicitamente.
 
 ![image](https://user-images.githubusercontent.com/6695037/129268044-e06cffd0-bda1-48d9-8f51-128d0e5b3485.png)
-    
+
 ### equi join
 
 Esta é a operação de junção mais comum. Tem dois sub-niveis:
@@ -280,13 +280,13 @@ Esta é a operação de junção mais comum. Tem dois sub-niveis:
 - outer join (as left, right, full outer join)
 
 ![image](https://user-images.githubusercontent.com/6695037/129268019-0a1e846f-4a01-403f-8e73-0d24c14f94e0.png)
-    
+
 ### semi join
 
 Este conceito relacional pode ser expresso de duas maneiras em sql: usando um predicado in ou usando um predicado exists. “Semi” significa “metade” em latim. Este tipo de junção é usado para juntar apenas “metade” de uma referência de tabela.
 
 ![image](https://user-images.githubusercontent.com/6695037/129267986-5468f8a8-0ac9-4e9d-83a7-397298deb59c.png)
-    
+  
 embora não haja uma regra geral sobre se você deve preferir in ou exists, podemos concluir que:
 
 - predicados in tendem a ser mais legíveis do que os predicados existents
@@ -298,7 +298,7 @@ embora não haja uma regra geral sobre se você deve preferir in ou exists, pode
 Este conceito relacional é exatamente o oposto de um semi-join. Você pode produzi-lo simplesmente adicionando uma palavra-chave not aos predicados in ou exists.
 
 ![image](https://user-images.githubusercontent.com/6695037/129267964-ca754f15-f20c-46e3-877f-9dd1ed00cfcc.png)
-    
+  
 Aplicam-se as mesmas regras em relação ao desempenho, legibilidade e expressividade
 
 ### division
@@ -306,7 +306,7 @@ Aplicam-se as mesmas regras em relação ao desempenho, legibilidade e expressiv
 A division é realmente um bicho de sete cabeças. Em resumo, se cross join é multiplicação, division é o inverso. divisão é o inverso de uma operação de junção cruzada division são muito difíceis de expressar em sql.
 
 ![image](https://user-images.githubusercontent.com/6695037/129267920-94c717aa-7903-4703-b696-ee6e815eb444.png)
-    
+
 ## Join Fetch
 
 A operação de Fetch pode ser usada em um Join para buscar os objetos relacionados em uma única consulta. Isso evita consultas adicionais para cada um dos relacionamentos do objeto e garante que os relacionamentos LAZY sejam carregados.
@@ -371,37 +371,41 @@ public interface Specification<T> {
 ### Exemplos
 
 ```java
-private Specification<GrupoAno> createProjection() {
+private Specification<Actor> createProjection() {
   return (root, query, build) -> {
       query.distinct(true);
-      root.fetch(GrupoAno_.grupo, JoinType.LEFT);
+      root.fetch(Actor_.movies, JoinType.LEFT);
       return null;
   };
 }
 ```
+
 ```java
-private Specification<GrupoAno> filterByIdIn(List<Long> ids) {
-  return (root, query, builder) -> root.get(GrupoAno_.id).in(ids);
+private Specification<Actor> filterByIdIn(List<Long> ids) {
+  return (root, query, builder) -> root.get(Actor_.id).in(ids);
 }
 ```
+
 ```java
-private Specification<GrupoAno> filterByExpirado(boolean expirado) {
+private Specification<Movie> filterByYearGreaterThanToday() {
   return (root, query, build) -> {
-      return build.greaterThan(root.get(GrupoAno_.dataValidade), Instant.now());
+      return build.greaterThan(root.get(Movie_.year), 1980);
   };
 }
 ```
+
 ```java
-private Specification<GrupoAno> filterByRoles() {
+private Specification<Actor> filterByRoles() {
   return (root, query, builder) -> {
-      List<String> grupos = SecurityUtils.getCurrentUsersGrupos();
-      Subquery<Grupo> grupoSubquery = query.subquery(Grupo.class);
-      Root<Grupo> grupo = grupoSubquery.from(Grupo.class);
-      Predicate equal = builder.equal(grupo.get(Grupo_.id), root.get(GrupoAno_.grupo));
-      Predicate in = grupo.join(Grupo_.om, JoinType.LEFT).get(OM_.siglaQueue).in(grupos);
+      List<String> movies = Arrays.asList("Beat Street", "Power");
+      Subquery<Movie> movieSubquery = query.subquery(Movie.class);
+      Root<Movie> movie = movieSubquery.from(Movie.class);
+      Join<Movie, Actor> join = movie.join(Movie_.actors, JoinType.LEFT);
+      Predicate equal = builder.equal(join.get(Actor_.id), root.get(Actor_.id));
+      Predicate in = movie.get(Movie_.title).in(movies);
       Predicate where = builder.and(equal, in);
-      grupoSubquery.select(grupo).distinct(true).where(where);
-      return builder.exists(grupoSubquery);
+      movieSubquery.select(movie).distinct(true).where(where);
+      return builder.exists(movieSubquery);
   };
 }
 ```
