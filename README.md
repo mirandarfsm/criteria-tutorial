@@ -188,7 +188,7 @@ Hibernate: select actor0_.id as id1_0_, actor0_.birthdate as birthdat2_0_, actor
 
 Vamos começar examinando como recuperar dados usando consultas CRITERIA. Veremos como obter todas as instâncias de uma classe específica do banco de dados.
 
-Temos uma classe Actor que representa a tupla “actor” no banco de dados:
+Temos a classe Actor que representa a tupla "actor" no banco de dados:
 
 ```java
 public class Actor implements Serializable {
@@ -196,6 +196,21 @@ public class Actor implements Serializable {
   private String name;
   private Instant birthdate;
   private Set<Movie> movies;
+  // standard setters and getters
+}
+```
+
+E temos a classe Movie que representa a tupla "movie" no banco de dados:
+
+```java
+public class Movie implements Serializable {
+  private Long id;
+  private String title;
+  private Integer year;
+  private Subject subject;
+  private Integer popularity;
+  private Integer awards;
+  private Set<Actor> actors;
   // standard setters and getters
 }
 ```
@@ -237,6 +252,12 @@ A cláusula `from` define o que está sendo consultado. A cláusula `from` é de
 
 A classe Predicate faz parte da API Criteria e é usada para construir cláusulas where.
 
+```java
+Predicate idEqualZeroPredicate = criteriaBuilder.equal(root.get("id"), 0);
+```
+
+### Exemplos de predicates
+
 - `equal`
 - `in`
 - `between`
@@ -249,10 +270,6 @@ A classe Predicate faz parte da API Criteria e é usada para construir cláusula
 - `isFalse`
 - `isTrue`
 - `isNull`
-
-```java
-Predicate idEqualZeroPredicate = criteriaBuilder.equal(root.get("id"), 0);
-```
 
 # Join (Left, Inner, Right, Cross)
 
@@ -270,6 +287,10 @@ Esses termos são comumente usados ​​em álgebra relacional. No SQL usa-se t
 
 Esse produz um produto cruzado das duas referências de tabela unidas, combinando cada registro da primeira referência de tabela com cada registro da segunda referência de tabela. Isso pode ser alcançado com referências a tabelas separadas por vírgulas na cláusula from. Nos raros casos em que é realmente necessário, você pode escrever uma junção cruzada explicitamente.
 
+```java
+criteriaQuery.multiselect(root, user);
+```
+
 ![image](https://user-images.githubusercontent.com/6695037/129268044-e06cffd0-bda1-48d9-8f51-128d0e5b3485.png)
 
 ### equi join
@@ -279,11 +300,28 @@ Esta é a operação de junção mais comum. Tem dois sub-niveis:
 - inner join (or just join)
 - outer join (as left, right, full outer join)
 
+```java
+Join movies = root.join("movies");
+```
+
 ![image](https://user-images.githubusercontent.com/6695037/129268019-0a1e846f-4a01-403f-8e73-0d24c14f94e0.png)
 
 ### semi join
 
 Este conceito relacional pode ser expresso de duas maneiras em sql: usando um predicado in ou usando um predicado exists. “Semi” significa “metade” em latim. Este tipo de junção é usado para juntar apenas “metade” de uma referência de tabela.
+
+```java
+CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
+CriteriaQuery<Actor> criteriaQuery = criteriaBuilder.createQuery(Actor.class);
+Root<Actor> root = criteriaQuery.from(Actor.class);
+
+Subquery<Actor> subQuery = criteriaQuery.subquery(Actor.class);
+Root<Actor> actor = subQuery.from(Actor.class);
+actor.join("movies");
+subQuery.select(actor.get("id"));
+
+criteriaQuery.where(root.get("id").in(subQuery));
+```
 
 ![image](https://user-images.githubusercontent.com/6695037/129267986-5468f8a8-0ac9-4e9d-83a7-397298deb59c.png)
 
@@ -296,6 +334,19 @@ embora não haja uma regra geral sobre se você deve preferir in ou exists, pode
 ### anti join
 
 Este conceito relacional é exatamente o oposto de um semi-join. Você pode produzi-lo simplesmente adicionando uma palavra-chave not aos predicados in ou exists.
+
+```java
+CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
+CriteriaQuery<Actor> criteriaQuery = criteriaBuilder.createQuery(Actor.class);
+Root<Actor> root = criteriaQuery.from(Actor.class);
+
+Subquery<Actor> subQuery = criteriaQuery.subquery(Actor.class);
+Root<Actor> actor = subQuery.from(Actor.class);
+actor.join("movies");
+subQuery.select(actor.get("id"));
+
+criteriaQuery.where(criteriaBuilder.not(root.get("id").in(subQuery)));
+```
 
 ![image](https://user-images.githubusercontent.com/6695037/129267964-ca754f15-f20c-46e3-877f-9dd1ed00cfcc.png)
 

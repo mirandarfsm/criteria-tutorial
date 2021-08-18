@@ -413,6 +413,33 @@ public class MainIT {
         
     }
 
+
+    @Test
+    @Transactional
+    public void assertThatActorsDoesntHaveActorsIn() {
+        // SQL
+        Query sql = em.createNativeQuery("SELECT * FROM actor a WHERE a.id not in (SELECT am.actor_id FROM actor_movie am)", Actor.class);
+        
+        // JPQL
+        TypedQuery<Actor> jpql = em.createQuery("SELECT actor FROM Actor actor WHERE actor.id not in (SELECT actor.id FROM Actor actor JOIN actor.movies)", Actor.class);
+        
+        // Criteria
+        CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
+        CriteriaQuery<Actor> criteriaQuery = criteriaBuilder.createQuery(Actor.class);
+        Root<Actor> root = criteriaQuery.from(Actor.class);
+        
+        Subquery<Actor> subQuery = criteriaQuery.subquery(Actor.class);
+        Root<Actor> actor = subQuery.from(Actor.class);
+        actor.join("movies");
+        subQuery.select(actor.get("id"));
+
+        criteriaQuery.where(criteriaBuilder.not(root.get("id").in(subQuery)));
+        TypedQuery<Actor> query = em.createQuery(criteriaQuery);
+
+        List<Actor> results = query.getResultList();
+        assertThat(results).isEmpty();
+    }
+
     @Test
     @Transactional
     public void assertThatActorsDoesntHaveAwardAntiJoin() {
