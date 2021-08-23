@@ -2,6 +2,7 @@ package com.mycompany.myapp;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.time.Instant;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -159,7 +160,15 @@ public class MainIT {
 
         
         // Criteria
-        List<Movie> results = jpql.getResultList();
+        CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
+        CriteriaQuery<Movie> criteriaQuery = criteriaBuilder.createQuery(Movie.class);
+        Root<Movie> root = criteriaQuery.from(Movie.class);
+        Predicate lessThanSeventyOne = criteriaBuilder.lessThan(root.get("year"), 1971);
+        criteriaQuery.where(lessThanSeventyOne);
+        criteriaQuery.select(root);
+        TypedQuery<Movie> query = em.createQuery(criteriaQuery);
+
+        List<Movie> results = query.getResultList();
         assertThat(results).isNotEmpty();
         assertThat(results.size()).isEqualTo(491);
 
@@ -170,13 +179,23 @@ public class MainIT {
     public void assertThatMoviesHaveAwardInSixtyOne() {
         // SQL
         Query sql = em.createNativeQuery("SELECT * FROM movie WHERE year = 1961 and awards = true", Movie.class);
-
         
         // JPQL
+        TypedQuery<Movie> jpql = em.createQuery("SELECT movie FROM Movie movie WHERE movie.year = 1961 and movie.awards = true", Movie.class);
+
         
         // Criteria
+        CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
+        CriteriaQuery<Movie> criteriaQuery = criteriaBuilder.createQuery(Movie.class);
+        Root<Movie> root = criteriaQuery.from(Movie.class);
+        Predicate yearEqualSixtyOne = criteriaBuilder.equal(root.get("year"), 1961);
+        Predicate awardsIsTrue = criteriaBuilder.equal(root.get("awards"), true);
+        Predicate and = criteriaBuilder.and(yearEqualSixtyOne, awardsIsTrue);
+        criteriaQuery.where(and);
+        criteriaQuery.select(root);
+        TypedQuery<Movie> query = em.createQuery(criteriaQuery);
 
-        List<Movie> results = sql.getResultList();
+        List<Movie> results = query.getResultList();
         assertThat(results).isNotEmpty();
         assertThat(results.size()).isEqualTo(4);
 
@@ -189,9 +208,20 @@ public class MainIT {
         Query sql = em.createNativeQuery("SELECT * FROM movie WHERE popularity > 80 or awards = true", Movie.class);
         
         // JPQL
-        
+        TypedQuery<Movie> jpql = em.createQuery("SELECT movie FROM Movie movie WHERE movie.popularity > 80 or movie.awards = true", Movie.class);
+
         // Criteria
-        List<Movie> results = sql.getResultList();
+        CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
+        CriteriaQuery<Movie> criteriaQuery = criteriaBuilder.createQuery(Movie.class);
+        Root<Movie> root = criteriaQuery.from(Movie.class);
+        Predicate popularityGreaterThanEighty = criteriaBuilder.greaterThan(root.get("popularity"), 80);
+        Predicate awardsIsTrue = criteriaBuilder.equal(root.get("awards"), true);
+        Predicate and = criteriaBuilder.or(popularityGreaterThanEighty, awardsIsTrue);
+        criteriaQuery.where(and);
+        criteriaQuery.select(root);
+        TypedQuery<Movie> query = em.createQuery(criteriaQuery);
+
+        List<Movie> results = query.getResultList();
         assertThat(results).isNotEmpty();
         assertThat(results.size()).isEqualTo(289);
     }
@@ -200,10 +230,27 @@ public class MainIT {
     @Transactional
     public void assertThatActorsHaveFortyYearOld() {
         // SQL
-        
+        Query sql = em.createNativeQuery("SELECT * FROM actor WHERE birthdate between '1981-01-01' and '1981-12-31'", Actor.class);
+        Query sql1 = em.createNativeQuery("SELECT * FROM actor WHERE EXTRACT(YEAR FROM birthdate) = 1981", Actor.class);
+
         // JPQL
+        TypedQuery<Actor> jpql = em.createQuery("SELECT actor FROM Actor actor WHERE actor.birthdate between '1981-01-01' and '1981-12-31'", Actor.class);
+        TypedQuery<Actor> jpql1 = em.createQuery("SELECT actor FROM Actor actor WHERE EXTRACT(YEAR FROM actor.birthdate) = 1981", Actor.class);
+
         
         // Criteria
+        CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
+        CriteriaQuery<Actor> criteriaQuery = criteriaBuilder.createQuery(Actor.class);
+        Root<Actor> root = criteriaQuery.from(Actor.class);
+        Predicate betweenEightyOne = criteriaBuilder.between(root.get("birthdate"), Instant.parse("1981-01-01T00:00:00.00Z"), Instant.parse("1981-12-31T00:00:00.00Z"));
+        // Predicate extractBirthdateYear = criteriaBuilder.equal(criteriaBuilder.function("EXTRACT", Integer.class, criteriaBuilder.literal("YEAR"), criteriaBuilder.literal("FROM"),root.get("birthdate")),1981);
+        criteriaQuery.where(betweenEightyOne);
+        criteriaQuery.select(root);
+        TypedQuery<Actor> query = em.createQuery(criteriaQuery);
+
+        List<Actor> results = query.getResultList();
+        assertThat(results).isNotEmpty();
+        assertThat(results.size()).isEqualTo(42);
 
     }
 
@@ -212,21 +259,42 @@ public class MainIT {
     @Transactional
     public void assertThatActorsBornDayThirtyth() {
         // SQL
+        Query sql = em.createNativeQuery("SELECT * FROM actor WHERE EXTRACT(DAY FROM birthdate) = 30", Actor.class);
         
         // JPQL
-        
-        // Criteria
+        TypedQuery<Actor> jpql = em.createQuery("SELECT actor FROM Actor actor WHERE EXTRACT(DAY FROM actor.birthdate) = 30", Actor.class);
 
+        // Criteria
+        CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
+        CriteriaQuery<Actor> criteriaQuery = criteriaBuilder.createQuery(Actor.class);
+        Root<Actor> root = criteriaQuery.from(Actor.class);
+        Predicate extractBirthdateDay = criteriaBuilder.equal(criteriaBuilder.function("DAY", Integer.class, root.get("birthdate")), 30);
+        criteriaQuery.where(extractBirthdateDay);
+        criteriaQuery.select(root);
+        TypedQuery<Actor> query = em.createQuery(criteriaQuery);
+
+        List<Actor> results = query.getResultList();
+        assertThat(results).isEmpty();
     }
 
     @Test
     @Transactional
     public void assertThatMoviesHaveHightPopularity() {
         // SQL
+        Query sql = em.createNativeQuery("SELECT max(popularity) FROM movie", Integer.class);
         
         // JPQL
-        
+        TypedQuery<Integer> jpql = em.createQuery("SELECT max(movie.popularity) FROM Movie movie", Integer.class);
+
         // Criteria
+        CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
+        CriteriaQuery<Integer> criteriaQuery = criteriaBuilder.createQuery(Integer.class);
+        Root<Movie> root = criteriaQuery.from(Movie.class);
+        criteriaQuery.select(criteriaBuilder.max(root.get("popularity")));
+        TypedQuery<Integer> query = em.createQuery(criteriaQuery);
+
+        Integer results = query.getSingleResult();
+        assertThat(results).isEqualTo(88);
 
     }
 
@@ -234,10 +302,20 @@ public class MainIT {
     @Transactional
     public void assertThatMoviesSumAllPopularity() {
         // SQL
+        Query sql = em.createNativeQuery("SELECT sum(popularity) FROM movie", Long.class);
         
         // JPQL
-        
+        TypedQuery<Long> jpql = em.createQuery("SELECT sum(movie.popularity) FROM Movie movie", Long.class);
+
         // Criteria
+        CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
+        CriteriaQuery<Integer> criteriaQuery = criteriaBuilder.createQuery(Integer.class);
+        Root<Movie> root = criteriaQuery.from(Movie.class);
+        criteriaQuery.select(criteriaBuilder.sum(root.get("popularity")));
+        TypedQuery<Integer> query = em.createQuery(criteriaQuery);
+
+        Integer results = query.getSingleResult();
+        assertThat(results).isEqualTo(71261);
 
     }
 
@@ -269,10 +347,24 @@ public class MainIT {
     @Transactional
     public void assertThatActorsCrossJoinMovie() {
         // SQL
-
+        Query sql = em.createNativeQuery("SELECT * FROM actor, movie", Actor.class);
+        Query sql2 = em.createNativeQuery("SELECT * FROM actor CROSS JOIN movie", Actor.class);
+        
         // JPQL
-
+        TypedQuery<Actor> jpql = em.createQuery("SELECT actor FROM Actor actor, Movie movie", Actor.class);
+        
         // Criteria
+        CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
+        CriteriaQuery<Actor> criteriaQuery = criteriaBuilder.createQuery(Actor.class);
+        Root<Actor> root = criteriaQuery.from(Actor.class);
+        Root<Movie> movie = criteriaQuery.from(Movie.class);
+        criteriaQuery.multiselect(root, movie);
+        criteriaQuery.select(root);
+        TypedQuery<Actor> query = em.createQuery(criteriaQuery);
+
+        List<Actor> results = query.getResultList();
+        assertThat(results).isNotEmpty();
+        assertThat(results.size()).isEqualTo(3611643);
 
     }
     
@@ -302,20 +394,48 @@ public class MainIT {
     @Transactional
     public void assertThatActorsInnerJoinMovieAndMovieHasAward() {
         // SQL
-        
+        Query sql = em.createNativeQuery("SELECT * FROM actor a INNER JOIN actor_movie am ON am.actor_id = a.id INNER JOIN movie m ON m.id = am.movie_id WHERE m.awards = true", Actor.class);
+
         // JPQL
+        TypedQuery<Actor> jpql = em.createQuery("SELECT actor FROM Actor actor INNER JOIN actor.movies movie WHERE movie.awards = true", Actor.class);
         
         // Criteria
+        CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
+        CriteriaQuery<Actor> criteriaQuery = criteriaBuilder.createQuery(Actor.class);
+        Root<Actor> root = criteriaQuery.from(Actor.class);
+        Join<Actor, Movie> movies = root.join("movies");
+        Predicate movieHasAward = criteriaBuilder.isTrue(movies.get("awards"));
+        criteriaQuery.where(movieHasAward);
+        criteriaQuery.select(root);
+        TypedQuery<Actor> query = em.createQuery(criteriaQuery);
+
+        List<Actor> results = query.getResultList();
+        assertThat(results).isNotEmpty();
+        assertThat(results.size()).isEqualTo(462);
     }
 
     @Test
     @Transactional
     public void assertThatActorsInnerJoinMovieWithMovieHasAward() {
         // SQL
-        
+        Query sql1 = em.createNativeQuery("SELECT * FROM actor a INNER JOIN actor_movie am ON am.actor_id = a.id INNER JOIN movie m ON m.id = am.movie_id and m.awards = true", Actor.class);
+
         // JPQL
+        TypedQuery<Actor> jpql1 = em.createQuery("SELECT actor FROM Actor actor INNER JOIN actor.movies movie with movie.awards = true", Actor.class);
         
         // Criteria
+        CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
+        CriteriaQuery<Actor> criteriaQuery = criteriaBuilder.createQuery(Actor.class);
+        Root<Actor> root = criteriaQuery.from(Actor.class);
+        Join<Actor, Movie> movies = root.join("movies");
+        Predicate movieHasAward = criteriaBuilder.isTrue(movies.get("awards"));
+        movies.on(movieHasAward);
+        criteriaQuery.select(root);
+        TypedQuery<Actor> query = em.createQuery(criteriaQuery);
+
+        List<Actor> results = query.getResultList();
+        assertThat(results).isNotEmpty();
+        assertThat(results.size()).isEqualTo(462);
         
     }
 
@@ -346,10 +466,22 @@ public class MainIT {
     @Transactional
     public void assertThatActorsRightJoinMovie() {
         // SQL
+        Query sql = em.createNativeQuery("SELECT * FROM actor a RIGHT OUTER JOIN actor_movie am ON am.actor_id = a.id RIGHT OUTER JOIN movie m ON m.id = am.movie_id", Actor.class);
         
         // JPQL
+        TypedQuery<Actor> jpql = em.createQuery("SELECT actor FROM Actor actor RIGHT OUTER JOIN actor.movies", Actor.class);
         
         // Criteria
+        CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
+        CriteriaQuery<Actor> criteriaQuery = criteriaBuilder.createQuery(Actor.class);
+        Root<Actor> root = criteriaQuery.from(Actor.class);
+        Join<Actor, Movie> movies = root.join("movies", JoinType.INNER);
+        criteriaQuery.select(root);
+        TypedQuery<Actor> query = em.createQuery(criteriaQuery);
+
+        List<Actor> results = jpql.getResultList();
+        assertThat(results).isNotEmpty();
+        assertThat(results.size()).isEqualTo(4286);
         
     }
 
@@ -357,9 +489,9 @@ public class MainIT {
     @Transactional
     public void assertThatActorsFullJoinMovie() {
         // SQL
-        
+        // FULL OUTER JOIN is not supported by H2
         // JPQL
-        
+        // FULL OUTER JOIN is not supported by H2
         // Criteria
         // JPA JoinType does not provide the full outer join type!
         
@@ -426,10 +558,30 @@ public class MainIT {
     @Transactional
     public void assertThatActorsExistsMovieSemiJoinAndHasAward() {
         // SQL
-        
+        Query sql = em.createNativeQuery("SELECT * FROM actor a WHERE exists (SELECT 1 FROM actor_movie am JOIN movie m on m.id=am.movie_id where a.id=am.actor_id and m.awards = true)", Actor.class);
+
         // JPQL
-        
+        TypedQuery<Actor> jpql = em.createQuery("SELECT actor FROM Actor actor WHERE exists (SELECT 1 FROM Actor actor2 JOIN actor2.movies movie where actor.id = actor2.id and movie.awards = true)", Actor.class);
+
         // Criteria
+        CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
+        CriteriaQuery<Actor> criteriaQuery = criteriaBuilder.createQuery(Actor.class);
+        Root<Actor> root = criteriaQuery.from(Actor.class);
+        
+        Subquery<Actor> subQuery = criteriaQuery.subquery(Actor.class);
+        Root<Actor> actor = subQuery.from(Actor.class);
+        Join<Actor, Movie> movie = actor.join("movies");
+        Predicate actorEqualRoot = criteriaBuilder.equal(root.get("id"), actor.get("id"));
+        Predicate movieHasAward = criteriaBuilder.isTrue(movie.get("awards"));
+        subQuery.where(criteriaBuilder.and(actorEqualRoot, movieHasAward));
+        subQuery.select(actor.get("id"));
+
+        criteriaQuery.where(criteriaBuilder.exists(subQuery));
+        TypedQuery<Actor> query = em.createQuery(criteriaQuery);
+
+        List<Actor> results = query.getResultList();
+        assertThat(results).isNotEmpty();
+        assertThat(results.size()).isEqualTo(344);
         
     }
 
@@ -437,10 +589,17 @@ public class MainIT {
     @Transactional
     public void assertThatActorsHasAwardAndLessThanThirtyCrossJoin() {
         // SQL
+        Query sql = em.createNativeQuery("SELECT * FROM actor a, actor_movie am, movie m WHERE a.id=am.actor_id and am.movie_id=m.id and m.awards=true and a.birthdate > '1991-01-01'", Actor.class);
+        Query sql1 = em.createNativeQuery("SELECT * FROM actor a CROSS JOIN actor_movie am CROSS JOIN movie m WHERE a.id=am.actor_id and am.movie_id=m.id and m.awards=true and a.birthdate > '1991-01-01'", Actor.class);
         
         // JPQL
-        
+        // Não é possível, tabela actor_movie não mapeada como class        
         // Criteria
+        // Não é possível, tabela actor_movie não mapeada como class
+        
+        List<Actor> results = sql1.getResultList();
+        assertThat(results).isNotEmpty();
+        assertThat(results.size()).isEqualTo(141);
         
     }
 
@@ -448,21 +607,57 @@ public class MainIT {
     @Transactional
     public void assertThatActorsHasAwardAndLessThanThirtyEquiJoin() {
         // SQL
-        
+        Query sql = em.createNativeQuery("SELECT * FROM actor a JOIN actor_movie am on a.id=am.actor_id JOIN movie m on am.movie_id=m.id WHERE m.awards=true and a.birthdate > '1991-01-01'", Actor.class);
+
         // JPQL
+        TypedQuery<Actor> jpql = em.createQuery("SELECT actor FROM Actor actor JOIN actor.movies movie WHERE movie.awards = true and actor.birthdate > '1991-01-01'", Actor.class);
         
         // Criteria
-        
+        // Criteria
+        CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
+        CriteriaQuery<Actor> criteriaQuery = criteriaBuilder.createQuery(Actor.class);
+        Root<Actor> root = criteriaQuery.from(Actor.class);
+        Join<Actor, Movie> movies = root.join("movies", JoinType.INNER);
+        Predicate movieHasAwards = criteriaBuilder.isTrue(movies.get("awards"));
+        Predicate actorLessThanThirtyYear = criteriaBuilder.greaterThan(root.get("birthdate"), Instant.parse("1991-01-01T00:00:00.00Z"));
+        criteriaQuery.where(criteriaBuilder.and(movieHasAwards, actorLessThanThirtyYear));
+        criteriaQuery.select(root);
+        TypedQuery<Actor> query = em.createQuery(criteriaQuery);
+
+        List<Actor> results = query.getResultList();
+        assertThat(results).isNotEmpty();
+        assertThat(results.size()).isEqualTo(141);
     }
 
     @Test
     @Transactional
     public void assertThatActorsHasAwardAndLessThanThirtySemiJoin() {
         // SQL
-        
+        Query sql = em.createNativeQuery("SELECT * FROM actor a WHERE exists (SELECT 1 FROM actor_movie am JOIN movie m on m.id=am.movie_id where a.id=am.actor_id and m.awards = true and a.birthdate > '1991-01-01')", Actor.class);
+
         // JPQL
-        
+        TypedQuery<Actor> jpql = em.createQuery("SELECT actor FROM Actor actor WHERE exists (SELECT 1 FROM Actor actor2 JOIN actor2.movies movie where actor.id = actor2.id and movie.awards = true and actor2.birthdate > '1991-01-01')", Actor.class);
+
         // Criteria
+        CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
+        CriteriaQuery<Actor> criteriaQuery = criteriaBuilder.createQuery(Actor.class);
+        Root<Actor> root = criteriaQuery.from(Actor.class);
+        
+        Subquery<Actor> subQuery = criteriaQuery.subquery(Actor.class);
+        Root<Actor> actor = subQuery.from(Actor.class);
+        Join<Actor, Movie> movie = actor.join("movies");
+        Predicate actorEqualRoot = criteriaBuilder.equal(root.get("id"), actor.get("id"));
+        Predicate movieHasAward = criteriaBuilder.isTrue(movie.get("awards"));
+        Predicate actorLessThanThirtyYear = criteriaBuilder.greaterThan(root.get("birthdate"), Instant.parse("1991-01-01T00:00:00.00Z"));
+        subQuery.where(criteriaBuilder.and(actorEqualRoot, movieHasAward, actorLessThanThirtyYear));
+        subQuery.select(actor.get("id"));
+
+        criteriaQuery.where(criteriaBuilder.exists(subQuery));
+        TypedQuery<Actor> query = em.createQuery(criteriaQuery);
+
+        List<Actor> results = jpql.getResultList();
+        assertThat(results).isNotEmpty();
+        assertThat(results.size()).isEqualTo(101);
         
     }
 
@@ -827,7 +1022,7 @@ public class MainIT {
         CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
         CriteriaQuery<Integer> criteriaQuery = criteriaBuilder.createQuery(Integer.class);
         Root<Movie> root = criteriaQuery.from(Movie.class);
-        criteriaQuery.select(root.get("year"))
+        criteriaQuery.select(root.get("year"));
         criteriaQuery.distinct(true);
         TypedQuery<Integer> query = em.createQuery(criteriaQuery);
 
