@@ -13,7 +13,14 @@ public class ActorWithAgeDTO implements Serializable {
 
     private int age;
 
-    
+    public ActorWithAgeDTO() {}
+
+    public ActorWithAgeDTO(Long id, String name, int age) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+    }
+
     public Long getId() {
         return id;
     }
